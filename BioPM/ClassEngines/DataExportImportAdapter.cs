@@ -32,13 +32,13 @@ namespace BioPM.ClassEngines
 
     public class DataExportFactory : DatabaseFactory
     {
-        public static void ExportDataToSqlServerForBagian(DataSet data)
+        public static void ExportDataToSqlServerForActivity(DataSet data)
         {
             for (int i = 0; i < data.Tables[0].Rows.Count; i++)
             {
                 string date = DateTime.Today.ToString("MM/dd/yyyy");
                 SqlConnection conn = GetConnection();
-                string sqlCmd = @"INSERT INTO biolegal.BAGIAN (BEGDA, ENDDA, KDBAG, NMBAG, CHGDT, USRDT) 
+                string sqlCmd = @"INSERT INTO biolegal.RISK_ACTIVITY (BEGDA, ENDDA, NMACT, KDACT, CHGDT, USRDT) 
                                 VALUES('" + "02/07/2014" + "','" + "12/31/9999" + "','" + data.Tables[0].Rows[i][0].ToString() + "','" + data.Tables[0].Rows[i][1].ToString() + "', GETDATE(), 'K495')";
                 SqlCommand cmd = DatabaseFactory.GetCommand(conn, sqlCmd);
 

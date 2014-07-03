@@ -22,40 +22,94 @@ namespace BioPM {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// txtBatch control.
+        /// ddlBagian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBatch;
+        protected global::System.Web.UI.WebControls.DropDownList ddlBagian;
         
         /// <summary>
-        /// txtRiskEvent control.
+        /// sqlRISK_BAGIAN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRiskEvent;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_BAGIAN;
         
         /// <summary>
-        /// txtRiskAct control.
+        /// ddlActivity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRiskAct;
+        protected global::System.Web.UI.WebControls.DropDownList ddlActivity;
         
         /// <summary>
-        /// txtRiskFunct control.
+        /// sqlRISK_ACTIVITY control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRiskFunct;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_ACTIVITY;
+        
+        /// <summary>
+        /// txtREGID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtREGID;
+        
+        /// <summary>
+        /// txtRKEVT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRKEVT;
+        
+        /// <summary>
+        /// ddlRKACT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlRKACT;
+        
+        /// <summary>
+        /// sqlRISK_ACTIVITY_NAME control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_ACTIVITY_NAME;
+        
+        /// <summary>
+        /// ddlRKFNC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlRKFNC;
+        
+        /// <summary>
+        /// sqlRISK_FUNC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_FUNC;
         
         /// <summary>
         /// txtSuppDt control.
@@ -85,6 +139,15 @@ namespace BioPM {
         protected global::System.Web.UI.WebControls.TextBox txtRiskLoc;
         
         /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
         /// txtRiskImpact control.
         /// </summary>
         /// <remarks>
@@ -103,13 +166,22 @@ namespace BioPM {
         protected global::System.Web.UI.WebControls.TextBox txtRiskStatus;
         
         /// <summary>
-        /// txtRiskMt control.
+        /// ddlRKMGT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRiskMt;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRKMGT;
+        
+        /// <summary>
+        /// sqlRISK_MANAGEMENT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_MANAGEMENT;
         
         /// <summary>
         /// txtFrequency control.

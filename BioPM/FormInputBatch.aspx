@@ -87,7 +87,7 @@
                          </span>
                     </header>
                     <div class="panel-body">
-                        <form class="form-horizontal " runat="server" >
+                        <form id="Form1" class="form-horizontal " runat="server" >
                          
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> BATCH </label>

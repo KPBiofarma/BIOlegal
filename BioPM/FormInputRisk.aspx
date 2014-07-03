@@ -15,11 +15,20 @@
         Session["role"] = "111111";
     }
 
-    protected void SetExistingOrganization()
-    {
-    }
     
-
+    /*
+    protected void SetExistingBagian()
+    {
+        ddlBagian.Items.Clear();
+        ddlActivity.Items.Clear();
+        foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetRisk())
+        {
+            ddlBagian.Items.Add(new List(data[0].ToString()));
+            ddlActivity.Items.Add(new List(data[0].ToString());
+        }
+    }
+    */
+   
     /*
     protected void SetProduct()
     {
@@ -30,37 +39,42 @@
         }
     }
 
-    
     protected void SetDataToForm()
     {
         SetProduct();
     }
+    */
     
-    
-
     protected void InsertRiskIntoDatabase()
     {
-        string REGID = (BioPM.ClassObjects.RiskCatalog.GetRiskMatchID() + 1).ToString();
-        BioPM.ClassObjects.RiskCatalog.InsertRisk(REGID, txt
+        //string REGID = (BioPM.ClassObjects.RiskCatalog.GetRiskMatchID() + 1).ToString();
+        //string[] REGID = new string[2];
+        //REGID[0] = ddlBagian.SelectedItem.Text;
+        //REGID[1] = ddlActivity.SelectedItem.Text;
+        
+        string REGIDstr = ddlBagian.SelectedItem.Text + "-" + ddlActivity.SelectedItem.Text + "-" + txtREGID.Text;
+        
+        BioPM.ClassObjects.RiskCatalog.InsertRisk(DateTime.Now.ToString(), REGIDstr, txtRKEVT.Text, ddlRKACT.SelectedItem.Text, ddlRKFNC.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text, ddlRKMGT.SelectedItem.Text,txtFrequency.Text, Session["username"].ToString());
     }
     
+    /*
     protected void InsertBatchIntoDatabasse()
     {          
         string BATID = (BioPM.ClassObjects.BatchCatalog.GetBatchMaxID() + 1).ToString();
         BioPM.ClassObjects.BatchCatalog.InsertBatch(BATID, txtProductionDate.Text, txtBatch.Text, ddlProductType.SelectedValue, txtDetail.Text, Session["username"].ToString());
     }
-
+    */
     protected void btnAdd_Click(object sender, EventArgs e)
     {
-        if (IsPostBack) InsertBatchIntoDatabasse();
-        Response.Redirect("PageBatch.aspx");
+        if (IsPostBack) InsertRiskIntoDatabase();
+        Response.Redirect("PageRisk.aspx");
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("PageUserPanel.aspx");
     }
-    */
+    
 </script>
 
 <html lang="en">
@@ -107,28 +121,39 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> NO REGISTRASI </label>
                             <div class="col-lg-3 col-md-4">
-                                <asp:TextBox ID="txtBatch" runat="server" class="form-control m-bot15" placeholder="NO REGISTRASI" ></asp:TextBox>                                
+                                <asp:DropDownList ID="ddlBagian" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_BAGIAN" DataTextField="KDBAG" DataValueField="KDBAG"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_BAGIAN" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[BAGIAN].[KDBAG]
+FROM [biolegal].[BAGIAN]
+"></asp:SqlDataSource>
+                                <asp:DropDownList ID="ddlActivity" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="KDACT" DataValueField="KDACT"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_ACTIVITY" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[KDACT]
+FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
+                                <asp:TextBox ID="txtREGID" runat="server" class="form-control m-bot15"></asp:TextBox>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK EVENT </label>
                             <div class="col-lg-3 col-md-4">
-                                <asp:TextBox ID="txtRiskEvent" runat="server" class="form-control m-bot15" placeholder="RISK EVENT" ></asp:TextBox>
+                                <asp:TextBox ID="txtRKEVT" runat="server" class="form-control m-bot15" placeholder="RISK EVENT" ></asp:TextBox>
                             </div>
                         </div>
                             
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK ACTIVITY </label>
                             <div class="col-md-4 col-lg-3">
-                               <asp:TextBox ID="txtRiskAct" runat="server" class="form-control m-bot15" placeholder="RISK ACTIVITY" ></asp:TextBox>
+                                <asp:DropDownList ID="ddlRKACT" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY_NAME" DataTextField="NMACT" DataValueField="NMACT"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_ACTIVITY_NAME" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[NMACT]
+FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK FUNCTION </label>
                             <div class="col-md-4 col-lg-3">
-                                    <asp:TextBox ID="txtRiskFunct" runat="server" class="form-control m-bot15" placeholder="RISK FUNCTION" ></asp:TextBox>
+                                <asp:DropDownList ID="ddlRKFNC" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="NMFNC" DataValueField="NMFNC"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_FUNC" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_FUNCTION].[NMFNC]
+FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                             </div>
                         </div>
 
@@ -142,21 +167,29 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK CAUSE </label>
                             <div class="col-md-4 col-lg-3">
-                                    <asp:TextBox ID="txtRiskCause" runat="server" class="form-control m-bot15" placeholder="RISK CAUSE" ></asp:TextBox>
+                                <asp:TextBox ID="txtRiskCause" runat="server" class="form-control m-bot15" placeholder="RISK CAUSE" ></asp:TextBox>
                             </div>
                         </div>
 
                        <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK LOCATION </label>
                             <div class="col-md-4 col-lg-3">
-                                    <asp:TextBox ID="txtRiskLoc" runat="server" class="form-control m-bot15" placeholder="RISK LOCATION" ></asp:TextBox>
+                                <asp:TextBox ID="txtRiskLoc" runat="server" class="form-control m-bot15" placeholder="RISK LOCATION" ></asp:TextBox>
+                            </div>
+                        </div>
+
+
+                         <div class="form-group">
+                            <label class="col-sm-3 control-label"> RISK PROBABILITY </label>
+                            <div class="col-md-4 col-lg-3">
+                                <asp:Button class="btn btn-round btn-primary" ID="Button1" runat="server" Text="Add"/>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK IMPACT </label>
                             <div class="col-md-4 col-lg-3">
-                                    <asp:TextBox ID="txtRiskImpact" runat="server" class="form-control m-bot15" placeholder="RISK IMPACT" ></asp:TextBox>
+                                 <asp:TextBox ID="txtRiskImpact" runat="server" class="form-control m-bot15" placeholder="RISK IMPACT" ></asp:TextBox>
                             </div>
                         </div>                        
 
@@ -170,7 +203,9 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK MAINTENANCE </label>
                             <div class="col-md-4 col-lg-3">
-                                    <asp:TextBox ID="txtRiskMt" runat="server" class="form-control m-bot15" placeholder="RISK MAINTENANCE" ></asp:TextBox>
+                                <asp:DropDownList ID="ddlRKMGT" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_MANAGEMENT" DataTextField="NMMGT" DataValueField="NMMGT" ></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_MANAGEMENT" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_MANAGEMENT].[NMMGT]
+FROM [biolegal].[RISK_MANAGEMENT]"></asp:SqlDataSource>
                             </div>
                         </div>                        
 

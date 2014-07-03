@@ -24,7 +24,8 @@
                 {
                     //USER
                     break;
-                }
+                }   
+                /*
             case "1":
                 {
                     BioPM.ClassObjects.ProductCatalog.DeleteProduct(ID);
@@ -136,6 +137,12 @@
             case "20":
                 {
                     //PRINT LABEL
+                    break;
+                }*/
+            case "21":
+                {
+                    BioPM.ClassObjects.RiskCatalog.DeleteRisk(ID);
+                    message = "DELETE SUCCESS! PRODUCT ID " + ID + " HAS BEEN DELETED. <a href='PageRisk.aspx'>BACK</a>.";
                     break;
                 }
             default :
