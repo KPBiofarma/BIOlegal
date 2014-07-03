@@ -1,0 +1,1246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{766CC975-BDCD-4BB9-A997-48FA922F912A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BioPM</RootNamespace>
+    <AssemblyName>BioPM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net40\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net40\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net40\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net40\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClassEngines\PageDataExport.aspx" />
+    <Content Include="FormGenerateMultiAnimalRandomDhiptheria.aspx" />
+    <Content Include="FormGenerateMultiAnimalRandomHepatitisB.aspx" />
+    <Content Include="FormGenerateMultiAnimalRandomPertussis.aspx" />
+    <Content Include="FormGenerateMultiAnimalRandomTetanus.aspx" />
+    <Content Include="FormInputBatchTransaction.aspx" />
+    <Content Include="FormInputLabel.aspx" />
+    <Content Include="FormInputLabelBatch.aspx" />
+    <Content Include="FormInputLabelCategory.aspx" />
+    <Content Include="FormInputLabelPrintRequestCloned.aspx" />
+    <Content Include="FormInputLabelReprintRequest.aspx" />
+    <Content Include="FormInputLabelSubCategory.aspx" />
+    <Content Include="FormInputNVTBuilding.aspx" />
+    <Content Include="FormInputOrganization.aspx" />
+    <Content Include="FormInputOrganizationStructure.aspx" />
+    <Content Include="FormInputRisk.aspx" />
+    <Content Include="FormRegisterUserCloned.aspx" />
+    <Content Include="FormUpdateBatchTransaction.aspx" />
+    <Content Include="FormUpdateLabel.aspx" />
+    <Content Include="FormUpdateLabelBatch.aspx" />
+    <Content Include="FormUpdateLabelCategory.aspx" />
+    <Content Include="FormUpdateLabelPrintRequest.aspx" />
+    <Content Include="FormUpdateLabelSubCategory.aspx" />
+    <Content Include="FormUpdateNVTBuilding.aspx" />
+    <Content Include="FormGenerateNVTClonedSecond.aspx" />
+    <Content Include="FormUpdateOrganization.aspx" />
+    <Content Include="FormUpdateOrganizationStructure.aspx" />
+    <Content Include="PageBatchProductProduction.aspx" />
+    <Content Include="PageBatchProductProductionApproval.aspx" />
+    <Content Include="PageBatchProductProductionReview.aspx" />
+    <Content Include="PageBatchProductQualityAssurance.aspx" />
+    <Content Include="PageBatchProductQualityAssuranceApproval.aspx" />
+    <Content Include="PageBatchProductQualityAssuranceReview.aspx" />
+    <Content Include="PageBatchProductQualityControl.aspx" />
+    <Content Include="PageBatchProductQualityControlApproval.aspx" />
+    <Content Include="PageBatchProductQualityControlReview.aspx" />
+    <Content Include="PageLabel.aspx" />
+    <Content Include="PageLabelBatch.aspx" />
+    <Content Include="PageLabelCategory.aspx" />
+    <Content Include="FormApproveLabelPrint.aspx" />
+    <Content Include="PageLabelPrintApproval.aspx" />
+    <Content Include="FormInputLabelPrintRequest.aspx" />
+    <Content Include="PageLabelPrintRequest.aspx" />
+    <Content Include="PageLabelSubCategory.aspx" />
+    <Content Include="PageOrganization.aspx" />
+    <Content Include="PageOrganizationStructure.aspx" />
+    <Content Include="PageQualityAssuranceTransactionApproval.aspx" />
+    <Content Include="PageQualityAssuranceTransactionReviewFirstStage.aspx" />
+    <Content Include="PageQualityAssuranceTransactionReviewSecondStage.aspx" />
+    <Content Include="PageQualityControlTransactionApproval.aspx" />
+    <Content Include="PageBatchTransaction.aspx" />
+    <Content Include="PageLoginCloned.aspx" />
+    <Content Include="PageLoginCTI.aspx" />
+    <Content Include="PageNVTBuilding.aspx" />
+    <Content Include="PageProductionTransaction.aspx" />
+    <Content Include="PageProductionTransactionApproval.aspx" />
+    <Content Include="PageProductionTransactionReview.aspx" />
+    <Content Include="FormGenerateDiphtheriaPotencyCloned.aspx" />
+    <Content Include="FormGenerateHepatitisPotencyCloned.aspx" />
+    <Content Include="FormGenerateMultiAnimalRandom.aspx" />
+    <Content Include="FormGeneratePertussisPotencyCloned.aspx" />
+    <Content Include="FormGenerateRawMaterialSampleCloned.aspx" />
+    <Content Include="FormGenerateRawMaterialNPlan.aspx" />
+    <Content Include="FormGenerateTetanusPotencyCloned.aspx" />
+    <Content Include="FormRegisterUser.aspx" />
+    <Content Include="FormInputBatch.aspx" />
+    <Content Include="FormInputDilution.aspx" />
+    <Content Include="FormReportHepatitisPotency.aspx" />
+    <Content Include="FormReportNVT.aspx" />
+    <Content Include="FormGenerateHepatitisPotency.aspx" />
+    <Content Include="FormGenerateNVT.aspx" />
+    <Content Include="FormGenerateNVTCloned.aspx" />
+    <Content Include="FormGenerateRawMaterialSample.aspx" />
+    <Content Include="FormReportRawMaterialRandom.aspx" />
+    <Content Include="FormUpdateBatch.aspx" />
+    <Content Include="PageBatch.aspx" />
+    <Content Include="PageDilutionSample.aspx" />
+    <Content Include="PageLogin.aspx" />
+    <Content Include="PageQualityAssuranceTransaction.aspx" />
+    <Content Include="PageQualityControlTransaction.aspx" />
+    <Content Include="PageQualityControlTransactionReview.aspx" />
+    <Content Include="PageReport.aspx" />
+    <Content Include="PageReportNVT.aspx" />
+    <Content Include="PageReportRawMaterialRandom.aspx" />
+    <Content Include="PageRisk.aspx" />
+    <Content Include="PageSampleDilutionRandomDemo.aspx" />
+    <Content Include="PageSampleMultiAnimalRandom.aspx" />
+    <Content Include="PageSampleNVT.aspx" />
+    <Content Include="PageSampleRawMaterialNPlanRandom.aspx" />
+    <Content Include="PageSampleRawMaterialRandom.aspx" />
+    <Content Include="FormGenerateAnimalRandom.aspx" />
+    <Content Include="FormGenerateDiphtheriaPotency.aspx" />
+    <Content Include="FormGenerateMWGT.aspx" />
+    <Content Include="FormGeneratePertussisPotency.aspx" />
+    <Content Include="FormGenerateTetanusPotency.aspx" />
+    <Content Include="FormReportAnimalRandom.aspx" />
+    <Content Include="FormReportDiphtheriaPotency.aspx" />
+    <Content Include="FormReportMWGT.aspx" />
+    <Content Include="FormReportPertussisPotency.aspx" />
+    <Content Include="FormReportQCTest.aspx" />
+    <Content Include="FormReportTetanusPotency.aspx" />
+    <Content Include="FormUpdateDilutionBatchQC.aspx" />
+    <Content Include="FormUpdateMWGTBatchQC.aspx" />
+    <Content Include="PageCompanyEmployee.aspx" />
+    <Content Include="PageInputProductFormulation.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\BioPM.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="PageInformation.aspx" />
+    <Content Include="PageReportAnimalRandom.aspx" />
+    <Content Include="PageReportMWGT.aspx" />
+    <Content Include="PageReportSampleRandom.aspx" />
+    <Content Include="PageSampleAnimalRandom.aspx" />
+    <Content Include="PageSampleDilutionRandom.aspx" />
+    <Content Include="PageSampleMWGT.aspx" />
+    <Content Include="PageUserActiveAccount.aspx" />
+    <Content Include="PageUserAdminReference.aspx" />
+    <Content Include="PageUserPanel.aspx" />
+    <Content Include="PageUserProfile.aspx" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\login.css" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Service References\WS_CTI\BioPM.WS_CTI.CTIAppUsers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WS_CTI\WsAppAuth.disco" />
+    <None Include="Service References\WS_CTI\configuration91.svcinfo" />
+    <None Include="Service References\WS_CTI\configuration.svcinfo" />
+    <None Include="Service References\WS_CTI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\_references.js" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Service References\WS_CTI\WsAppAuth.wsdl" />
+    <None Include="Service References\WS_CTI\WsAppAuth.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WS_CTI\WsAppAuth1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WS_CTI\WsAppAuth2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ClassEngines\BinaryConverter.cs" />
+    <Compile Include="ClassEngines\DataExportImportAdapter.cs" />
+    <Compile Include="ClassEngines\DateFormatFactory.cs" />
+    <Compile Include="ClassEngines\PageDataExport.aspx.cs">
+      <DependentUpon>PageDataExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassEngines\PageDataExport.aspx.designer.cs">
+      <DependentUpon>PageDataExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassObjects\Organization.cs" />
+    <Compile Include="ClassObjects\QC.cs" />
+    <Compile Include="ClassObjects\Risk.cs" />
+    <Compile Include="ClassScripts\BasicScripts.cs" />
+    <Compile Include="ClassScripts\JS.cs" />
+    <Compile Include="FormGenerateMultiAnimalRandomDhiptheria.aspx.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomDhiptheria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomDhiptheria.aspx.designer.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomDhiptheria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomHepatitisB.aspx.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomHepatitisB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomHepatitisB.aspx.designer.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomHepatitisB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomPertussis.aspx.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomPertussis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomPertussis.aspx.designer.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomPertussis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomTetanus.aspx.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomTetanus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandomTetanus.aspx.designer.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandomTetanus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputBatchTransaction.aspx.cs">
+      <DependentUpon>FormInputBatchTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputBatchTransaction.aspx.designer.cs">
+      <DependentUpon>FormInputBatchTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabel.aspx.cs">
+      <DependentUpon>FormInputLabel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabel.aspx.designer.cs">
+      <DependentUpon>FormInputLabel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabelBatch.aspx.cs">
+      <DependentUpon>FormInputLabelBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabelBatch.aspx.designer.cs">
+      <DependentUpon>FormInputLabelBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabelCategory.aspx.cs">
+      <DependentUpon>FormInputLabelCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabelCategory.aspx.designer.cs">
+      <DependentUpon>FormInputLabelCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabelPrintRequestCloned.aspx.cs">
+      <DependentUpon>FormInputLabelPrintRequestCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabelPrintRequestCloned.aspx.designer.cs">
+      <DependentUpon>FormInputLabelPrintRequestCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabelReprintRequest.aspx.cs">
+      <DependentUpon>FormInputLabelReprintRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabelReprintRequest.aspx.designer.cs">
+      <DependentUpon>FormInputLabelReprintRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabelSubCategory.aspx.cs">
+      <DependentUpon>FormInputLabelSubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabelSubCategory.aspx.designer.cs">
+      <DependentUpon>FormInputLabelSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputNVTBuilding.aspx.cs">
+      <DependentUpon>FormInputNVTBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputNVTBuilding.aspx.designer.cs">
+      <DependentUpon>FormInputNVTBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputOrganization.aspx.cs">
+      <DependentUpon>FormInputOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputOrganization.aspx.designer.cs">
+      <DependentUpon>FormInputOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputOrganizationStructure.aspx.cs">
+      <DependentUpon>FormInputOrganizationStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputOrganizationStructure.aspx.designer.cs">
+      <DependentUpon>FormInputOrganizationStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputRisk.aspx.cs">
+      <DependentUpon>FormInputRisk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputRisk.aspx.designer.cs">
+      <DependentUpon>FormInputRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterUserCloned.aspx.cs">
+      <DependentUpon>FormRegisterUserCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormRegisterUserCloned.aspx.designer.cs">
+      <DependentUpon>FormRegisterUserCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateBatchTransaction.aspx.cs">
+      <DependentUpon>FormUpdateBatchTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateBatchTransaction.aspx.designer.cs">
+      <DependentUpon>FormUpdateBatchTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateLabel.aspx.cs">
+      <DependentUpon>FormUpdateLabel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateLabel.aspx.designer.cs">
+      <DependentUpon>FormUpdateLabel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateLabelBatch.aspx.cs">
+      <DependentUpon>FormUpdateLabelBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateLabelBatch.aspx.designer.cs">
+      <DependentUpon>FormUpdateLabelBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateLabelCategory.aspx.cs">
+      <DependentUpon>FormUpdateLabelCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateLabelCategory.aspx.designer.cs">
+      <DependentUpon>FormUpdateLabelCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateLabelPrintRequest.aspx.cs">
+      <DependentUpon>FormUpdateLabelPrintRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateLabelPrintRequest.aspx.designer.cs">
+      <DependentUpon>FormUpdateLabelPrintRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateLabelSubCategory.aspx.cs">
+      <DependentUpon>FormUpdateLabelSubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateLabelSubCategory.aspx.designer.cs">
+      <DependentUpon>FormUpdateLabelSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateNVTBuilding.aspx.cs">
+      <DependentUpon>FormUpdateNVTBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateNVTBuilding.aspx.designer.cs">
+      <DependentUpon>FormUpdateNVTBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateNVTClonedSecond.aspx.cs">
+      <DependentUpon>FormGenerateNVTClonedSecond.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateNVTClonedSecond.aspx.designer.cs">
+      <DependentUpon>FormGenerateNVTClonedSecond.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateOrganization.aspx.cs">
+      <DependentUpon>FormUpdateOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateOrganization.aspx.designer.cs">
+      <DependentUpon>FormUpdateOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateOrganizationStructure.aspx.cs">
+      <DependentUpon>FormUpdateOrganizationStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateOrganizationStructure.aspx.designer.cs">
+      <DependentUpon>FormUpdateOrganizationStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductProduction.aspx.cs">
+      <DependentUpon>PageBatchProductProduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductProduction.aspx.designer.cs">
+      <DependentUpon>PageBatchProductProduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductProductionApproval.aspx.cs">
+      <DependentUpon>PageBatchProductProductionApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductProductionApproval.aspx.designer.cs">
+      <DependentUpon>PageBatchProductProductionApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductProductionReview.aspx.cs">
+      <DependentUpon>PageBatchProductProductionReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductProductionReview.aspx.designer.cs">
+      <DependentUpon>PageBatchProductProductionReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductQualityAssurance.aspx.cs">
+      <DependentUpon>PageBatchProductQualityAssurance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductQualityAssurance.aspx.designer.cs">
+      <DependentUpon>PageBatchProductQualityAssurance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductQualityAssuranceApproval.aspx.cs">
+      <DependentUpon>PageBatchProductQualityAssuranceApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductQualityAssuranceApproval.aspx.designer.cs">
+      <DependentUpon>PageBatchProductQualityAssuranceApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductQualityAssuranceReview.aspx.cs">
+      <DependentUpon>PageBatchProductQualityAssuranceReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductQualityAssuranceReview.aspx.designer.cs">
+      <DependentUpon>PageBatchProductQualityAssuranceReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductQualityControl.aspx.cs">
+      <DependentUpon>PageBatchProductQualityControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductQualityControl.aspx.designer.cs">
+      <DependentUpon>PageBatchProductQualityControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductQualityControlApproval.aspx.cs">
+      <DependentUpon>PageBatchProductQualityControlApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductQualityControlApproval.aspx.designer.cs">
+      <DependentUpon>PageBatchProductQualityControlApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchProductQualityControlReview.aspx.cs">
+      <DependentUpon>PageBatchProductQualityControlReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchProductQualityControlReview.aspx.designer.cs">
+      <DependentUpon>PageBatchProductQualityControlReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLabel.aspx.cs">
+      <DependentUpon>PageLabel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLabel.aspx.designer.cs">
+      <DependentUpon>PageLabel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLabelBatch.aspx.cs">
+      <DependentUpon>PageLabelBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLabelBatch.aspx.designer.cs">
+      <DependentUpon>PageLabelBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLabelCategory.aspx.cs">
+      <DependentUpon>PageLabelCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLabelCategory.aspx.designer.cs">
+      <DependentUpon>PageLabelCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormApproveLabelPrint.aspx.cs">
+      <DependentUpon>FormApproveLabelPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormApproveLabelPrint.aspx.designer.cs">
+      <DependentUpon>FormApproveLabelPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLabelPrintApproval.aspx.cs">
+      <DependentUpon>PageLabelPrintApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLabelPrintApproval.aspx.designer.cs">
+      <DependentUpon>PageLabelPrintApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputLabelPrintRequest.aspx.cs">
+      <DependentUpon>FormInputLabelPrintRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputLabelPrintRequest.aspx.designer.cs">
+      <DependentUpon>FormInputLabelPrintRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLabelPrintRequest.aspx.cs">
+      <DependentUpon>PageLabelPrintRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLabelPrintRequest.aspx.designer.cs">
+      <DependentUpon>PageLabelPrintRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLabelSubCategory.aspx.cs">
+      <DependentUpon>PageLabelSubCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLabelSubCategory.aspx.designer.cs">
+      <DependentUpon>PageLabelSubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageOrganization.aspx.cs">
+      <DependentUpon>PageOrganization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageOrganization.aspx.designer.cs">
+      <DependentUpon>PageOrganization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageOrganizationStructure.aspx.cs">
+      <DependentUpon>PageOrganizationStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageOrganizationStructure.aspx.designer.cs">
+      <DependentUpon>PageOrganizationStructure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransactionApproval.aspx.cs">
+      <DependentUpon>PageQualityAssuranceTransactionApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransactionApproval.aspx.designer.cs">
+      <DependentUpon>PageQualityAssuranceTransactionApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransactionReviewFirstStage.aspx.cs">
+      <DependentUpon>PageQualityAssuranceTransactionReviewFirstStage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransactionReviewFirstStage.aspx.designer.cs">
+      <DependentUpon>PageQualityAssuranceTransactionReviewFirstStage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransactionReviewSecondStage.aspx.cs">
+      <DependentUpon>PageQualityAssuranceTransactionReviewSecondStage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransactionReviewSecondStage.aspx.designer.cs">
+      <DependentUpon>PageQualityAssuranceTransactionReviewSecondStage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityControlTransactionApproval.aspx.cs">
+      <DependentUpon>PageQualityControlTransactionApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityControlTransactionApproval.aspx.designer.cs">
+      <DependentUpon>PageQualityControlTransactionApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageBatchTransaction.aspx.cs">
+      <DependentUpon>PageBatchTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatchTransaction.aspx.designer.cs">
+      <DependentUpon>PageBatchTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLoginCloned.aspx.cs">
+      <DependentUpon>PageLoginCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLoginCloned.aspx.designer.cs">
+      <DependentUpon>PageLoginCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLoginCTI.aspx.cs">
+      <DependentUpon>PageLoginCTI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLoginCTI.aspx.designer.cs">
+      <DependentUpon>PageLoginCTI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageNVTBuilding.aspx.cs">
+      <DependentUpon>PageNVTBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageNVTBuilding.aspx.designer.cs">
+      <DependentUpon>PageNVTBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageProductionTransaction.aspx.cs">
+      <DependentUpon>PageProductionTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageProductionTransaction.aspx.designer.cs">
+      <DependentUpon>PageProductionTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageProductionTransactionApproval.aspx.cs">
+      <DependentUpon>PageProductionTransactionApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageProductionTransactionApproval.aspx.designer.cs">
+      <DependentUpon>PageProductionTransactionApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageProductionTransactionReview.aspx.cs">
+      <DependentUpon>PageProductionTransactionReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageProductionTransactionReview.aspx.designer.cs">
+      <DependentUpon>PageProductionTransactionReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassObjects\Batch.cs" />
+    <Compile Include="FormGenerateDiphtheriaPotencyCloned.aspx.cs">
+      <DependentUpon>FormGenerateDiphtheriaPotencyCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateDiphtheriaPotencyCloned.aspx.designer.cs">
+      <DependentUpon>FormGenerateDiphtheriaPotencyCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateHepatitisPotencyCloned.aspx.cs">
+      <DependentUpon>FormGenerateHepatitisPotencyCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateHepatitisPotencyCloned.aspx.designer.cs">
+      <DependentUpon>FormGenerateHepatitisPotencyCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandom.aspx.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateMultiAnimalRandom.aspx.designer.cs">
+      <DependentUpon>FormGenerateMultiAnimalRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeneratePertussisPotencyCloned.aspx.cs">
+      <DependentUpon>FormGeneratePertussisPotencyCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGeneratePertussisPotencyCloned.aspx.designer.cs">
+      <DependentUpon>FormGeneratePertussisPotencyCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateRawMaterialSampleCloned.aspx.cs">
+      <DependentUpon>FormGenerateRawMaterialSampleCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateRawMaterialSampleCloned.aspx.designer.cs">
+      <DependentUpon>FormGenerateRawMaterialSampleCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateRawMaterialNPlan.aspx.cs">
+      <DependentUpon>FormGenerateRawMaterialNPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateRawMaterialNPlan.aspx.designer.cs">
+      <DependentUpon>FormGenerateRawMaterialNPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateTetanusPotencyCloned.aspx.cs">
+      <DependentUpon>FormGenerateTetanusPotencyCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateTetanusPotencyCloned.aspx.designer.cs">
+      <DependentUpon>FormGenerateTetanusPotencyCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterUser.aspx.cs">
+      <DependentUpon>FormRegisterUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormRegisterUser.aspx.designer.cs">
+      <DependentUpon>FormRegisterUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassObjects\SystemManagement.cs" />
+    <Compile Include="FormInputBatch.aspx.cs">
+      <DependentUpon>FormInputBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputBatch.aspx.designer.cs">
+      <DependentUpon>FormInputBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputDilution.aspx.cs">
+      <DependentUpon>FormInputDilution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputDilution.aspx.designer.cs">
+      <DependentUpon>FormInputDilution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportHepatitisPotency.aspx.cs">
+      <DependentUpon>FormReportHepatitisPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportHepatitisPotency.aspx.designer.cs">
+      <DependentUpon>FormReportHepatitisPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportNVT.aspx.cs">
+      <DependentUpon>FormReportNVT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportNVT.aspx.designer.cs">
+      <DependentUpon>FormReportNVT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateHepatitisPotency.aspx.cs">
+      <DependentUpon>FormGenerateHepatitisPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateHepatitisPotency.aspx.designer.cs">
+      <DependentUpon>FormGenerateHepatitisPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateNVT.aspx.cs">
+      <DependentUpon>FormGenerateNVT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateNVT.aspx.designer.cs">
+      <DependentUpon>FormGenerateNVT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateNVTCloned.aspx.cs">
+      <DependentUpon>FormGenerateNVTCloned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateNVTCloned.aspx.designer.cs">
+      <DependentUpon>FormGenerateNVTCloned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateRawMaterialSample.aspx.cs">
+      <DependentUpon>FormGenerateRawMaterialSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateRawMaterialSample.aspx.designer.cs">
+      <DependentUpon>FormGenerateRawMaterialSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportRawMaterialRandom.aspx.cs">
+      <DependentUpon>FormReportRawMaterialRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportRawMaterialRandom.aspx.designer.cs">
+      <DependentUpon>FormReportRawMaterialRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateBatch.aspx.cs">
+      <DependentUpon>FormUpdateBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateBatch.aspx.designer.cs">
+      <DependentUpon>FormUpdateBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassEngines\MenuControl.cs" />
+    <Compile Include="PageBatch.aspx.cs">
+      <DependentUpon>PageBatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageBatch.aspx.designer.cs">
+      <DependentUpon>PageBatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageDilutionSample.aspx.cs">
+      <DependentUpon>PageDilutionSample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageDilutionSample.aspx.designer.cs">
+      <DependentUpon>PageDilutionSample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLogin.aspx.cs">
+      <DependentUpon>PageLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLogin.aspx.designer.cs">
+      <DependentUpon>PageLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransaction.aspx.cs">
+      <DependentUpon>PageQualityAssuranceTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityAssuranceTransaction.aspx.designer.cs">
+      <DependentUpon>PageQualityAssuranceTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityControlTransaction.aspx.cs">
+      <DependentUpon>PageQualityControlTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityControlTransaction.aspx.designer.cs">
+      <DependentUpon>PageQualityControlTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageQualityControlTransactionReview.aspx.cs">
+      <DependentUpon>PageQualityControlTransactionReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageQualityControlTransactionReview.aspx.designer.cs">
+      <DependentUpon>PageQualityControlTransactionReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageReport.aspx.cs">
+      <DependentUpon>PageReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageReport.aspx.designer.cs">
+      <DependentUpon>PageReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageReportNVT.aspx.cs">
+      <DependentUpon>PageReportNVT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageReportNVT.aspx.designer.cs">
+      <DependentUpon>PageReportNVT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageReportRawMaterialRandom.aspx.cs">
+      <DependentUpon>PageReportRawMaterialRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageReportRawMaterialRandom.aspx.designer.cs">
+      <DependentUpon>PageReportRawMaterialRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageRisk.aspx.cs">
+      <DependentUpon>PageRisk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageRisk.aspx.designer.cs">
+      <DependentUpon>PageRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleDilutionRandomDemo.aspx.cs">
+      <DependentUpon>PageSampleDilutionRandomDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleDilutionRandomDemo.aspx.designer.cs">
+      <DependentUpon>PageSampleDilutionRandomDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleMultiAnimalRandom.aspx.cs">
+      <DependentUpon>PageSampleMultiAnimalRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleMultiAnimalRandom.aspx.designer.cs">
+      <DependentUpon>PageSampleMultiAnimalRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleNVT.aspx.cs">
+      <DependentUpon>PageSampleNVT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleNVT.aspx.designer.cs">
+      <DependentUpon>PageSampleNVT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleRawMaterialNPlanRandom.aspx.cs">
+      <DependentUpon>PageSampleRawMaterialNPlanRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleRawMaterialNPlanRandom.aspx.designer.cs">
+      <DependentUpon>PageSampleRawMaterialNPlanRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleRawMaterialRandom.aspx.cs">
+      <DependentUpon>PageSampleRawMaterialRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleRawMaterialRandom.aspx.designer.cs">
+      <DependentUpon>PageSampleRawMaterialRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateAnimalRandom.aspx.cs">
+      <DependentUpon>FormGenerateAnimalRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateAnimalRandom.aspx.designer.cs">
+      <DependentUpon>FormGenerateAnimalRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateDiphtheriaPotency.aspx.cs">
+      <DependentUpon>FormGenerateDiphtheriaPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateDiphtheriaPotency.aspx.designer.cs">
+      <DependentUpon>FormGenerateDiphtheriaPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateMWGT.aspx.cs">
+      <DependentUpon>FormGenerateMWGT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateMWGT.aspx.designer.cs">
+      <DependentUpon>FormGenerateMWGT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeneratePertussisPotency.aspx.cs">
+      <DependentUpon>FormGeneratePertussisPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGeneratePertussisPotency.aspx.designer.cs">
+      <DependentUpon>FormGeneratePertussisPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerateTetanusPotency.aspx.cs">
+      <DependentUpon>FormGenerateTetanusPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormGenerateTetanusPotency.aspx.designer.cs">
+      <DependentUpon>FormGenerateTetanusPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportAnimalRandom.aspx.cs">
+      <DependentUpon>FormReportAnimalRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportAnimalRandom.aspx.designer.cs">
+      <DependentUpon>FormReportAnimalRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportDiphtheriaPotency.aspx.cs">
+      <DependentUpon>FormReportDiphtheriaPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportDiphtheriaPotency.aspx.designer.cs">
+      <DependentUpon>FormReportDiphtheriaPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportMWGT.aspx.cs">
+      <DependentUpon>FormReportMWGT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportMWGT.aspx.designer.cs">
+      <DependentUpon>FormReportMWGT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportPertussisPotency.aspx.cs">
+      <DependentUpon>FormReportPertussisPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportPertussisPotency.aspx.designer.cs">
+      <DependentUpon>FormReportPertussisPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportQCTest.aspx.cs">
+      <DependentUpon>FormReportQCTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportQCTest.aspx.designer.cs">
+      <DependentUpon>FormReportQCTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportTetanusPotency.aspx.cs">
+      <DependentUpon>FormReportTetanusPotency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormReportTetanusPotency.aspx.designer.cs">
+      <DependentUpon>FormReportTetanusPotency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateDilutionBatchQC.aspx.cs">
+      <DependentUpon>FormUpdateDilutionBatchQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateDilutionBatchQC.aspx.designer.cs">
+      <DependentUpon>FormUpdateDilutionBatchQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateMWGTBatchQC.aspx.cs">
+      <DependentUpon>FormUpdateMWGTBatchQC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateMWGTBatchQC.aspx.designer.cs">
+      <DependentUpon>FormUpdateMWGTBatchQC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageCompanyEmployee.aspx.cs">
+      <DependentUpon>PageCompanyEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageCompanyEmployee.aspx.designer.cs">
+      <DependentUpon>PageCompanyEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageInputProductFormulation.aspx.cs">
+      <DependentUpon>PageInputProductFormulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageInputProductFormulation.aspx.designer.cs">
+      <DependentUpon>PageInputProductFormulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassScripts\SideBarMenu.cs" />
+    <Compile Include="ClassEngines\CryptographFactory.cs" />
+    <Compile Include="ClassEngines\DatabaseFactory.cs" />
+    <Compile Include="ClassObjects\Employee.cs" />
+    <Compile Include="ClassObjects\Label.cs" />
+    <Compile Include="ClassObjects\Production.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PageInformation.aspx.cs">
+      <DependentUpon>PageInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageInformation.aspx.designer.cs">
+      <DependentUpon>PageInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageReportAnimalRandom.aspx.cs">
+      <DependentUpon>PageReportAnimalRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageReportAnimalRandom.aspx.designer.cs">
+      <DependentUpon>PageReportAnimalRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageReportMWGT.aspx.cs">
+      <DependentUpon>PageReportMWGT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageReportMWGT.aspx.designer.cs">
+      <DependentUpon>PageReportMWGT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageReportSampleRandom.aspx.cs">
+      <DependentUpon>PageReportSampleRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageReportSampleRandom.aspx.designer.cs">
+      <DependentUpon>PageReportSampleRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleAnimalRandom.aspx.cs">
+      <DependentUpon>PageSampleAnimalRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleAnimalRandom.aspx.designer.cs">
+      <DependentUpon>PageSampleAnimalRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleDilutionRandom.aspx.cs">
+      <DependentUpon>PageSampleDilutionRandom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleDilutionRandom.aspx.designer.cs">
+      <DependentUpon>PageSampleDilutionRandom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageSampleMWGT.aspx.cs">
+      <DependentUpon>PageSampleMWGT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageSampleMWGT.aspx.designer.cs">
+      <DependentUpon>PageSampleMWGT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserActiveAccount.aspx.cs">
+      <DependentUpon>PageUserActiveAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageUserActiveAccount.aspx.designer.cs">
+      <DependentUpon>PageUserActiveAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserAdminReference.aspx.cs">
+      <DependentUpon>PageUserAdminReference.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageUserAdminReference.aspx.designer.cs">
+      <DependentUpon>PageUserAdminReference.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserPanel.aspx.cs">
+      <DependentUpon>PageUserPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageUserPanel.aspx.designer.cs">
+      <DependentUpon>PageUserPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageUserProfile.aspx.cs">
+      <DependentUpon>PageUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageUserProfile.aspx.designer.cs">
+      <DependentUpon>PageUserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClassScripts\StyleScripts.cs" />
+    <Compile Include="Service References\WS_CTI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ClassEngines\ValidationFactory.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
+    <Folder Include="Pages\Label\" />
+    <Folder Include="Pages\Raw Material\" />
+    <Folder Include="Scripts\AdminPanel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WS_CTI\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10438</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6085/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

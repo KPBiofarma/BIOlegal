@@ -1,0 +1,177 @@
+D:\Al - Temp\BioPM\BioPM\bin\BioPM.dll.config
+D:\Al - Temp\BioPM\BioPM\bin\BioPM.dll
+D:\Al - Temp\BioPM\BioPM\bin\BioPM.pdb
+D:\Al - Temp\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.dll
+D:\Al - Temp\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.dll
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.Core.dll
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.dll
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.dll
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Al - Temp\BioPM\BioPM\bin\EntityFramework.dll
+D:\Al - Temp\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Al - Temp\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\Al - Temp\BioPM\BioPM\bin\Microsoft.Web.Infrastructure.dll
+D:\Al - Temp\BioPM\BioPM\bin\System.Web.Providers.dll
+D:\Al - Temp\BioPM\BioPM\bin\System.Net.Http.dll
+D:\Al - Temp\BioPM\BioPM\bin\EntityFramework.xml
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.Core.xml
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.xml
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.xml
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Al - Temp\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.xml
+D:\Al - Temp\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+D:\Al - Temp\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Al - Temp\BioPM\BioPM\bin\System.Net.Http.xml
+D:\Al - Temp\BioPM\BioPM\obj\Debug\BioPM.csprojResolveAssemblyReference.cache
+D:\Al - Temp\BioPM\BioPM\obj\Debug\BioPM.dll
+D:\Al - Temp\BioPM\BioPM\obj\Debug\BioPM.pdb
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\BioPM.dll.config
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\BioPM.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\BioPM.pdb
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.Core.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\EntityFramework.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\System.Web.Providers.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\System.Net.Http.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\EntityFramework.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.Core.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\bin\System.Net.Http.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\obj\Debug\BioPM.csprojResolveAssemblyReference.cache
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\obj\Debug\BioPM.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\BACKED UP\BioPM - April\21052014\BioPM\BioPM\obj\Debug\BioPM.pdb
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\BioPM.dll.config
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\BioPM.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\BioPM.pdb
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.Core.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\EntityFramework.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\System.Web.Providers.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\System.Net.Http.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\EntityFramework.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.Core.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\bin\System.Net.Http.xml
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\obj\Debug\BioPM.dll
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\obj\Debug\BioPM.pdb
+C:\Users\SIMARRO\Documents\Visual Studio 2013\Projects\BioPM\BioPM\obj\Debug\BioPM.csprojResolveAssemblyReference.cache
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\obj\Debug\BioPM.csprojResolveAssemblyReference.cache
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\obj\Debug\BioPM.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\obj\Debug\BioPM.pdb
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\BioPM.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\BioPM.pdb
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.Core.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\EntityFramework.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\Microsoft.Web.Infrastructure.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\System.Web.Providers.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\System.Net.Http.dll
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\EntityFramework.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.Core.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Kuliah\KP\DARI AL\BioPM\BioPM\bin\System.Net.Http.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\BioPM.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\BioPM.pdb
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.Core.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\EntityFramework.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\Microsoft.Web.Infrastructure.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\System.Web.Providers.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\System.Net.Http.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\EntityFramework.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.Core.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\bin\System.Net.Http.xml
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\obj\Debug\BioPM.csprojResolveAssemblyReference.cache
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\obj\Debug\BioPM.dll
+D:\AMANDA\COLLEGES\KP\Biofarma\DARI AL\BioPM\BioPM\obj\Debug\BioPM.pdb
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\BioPM.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\BioPM.pdb
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.Core.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\EntityFramework.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\System.Web.Providers.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\System.Net.Http.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\EntityFramework.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.Core.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.Membership.OpenAuth.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\bin\System.Net.Http.xml
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\obj\Debug\BioPM.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\obj\Debug\BioPM.dll
+C:\Users\Public\Documents\KP\DARI AL\BioPM\BioPM\obj\Debug\BioPM.pdb

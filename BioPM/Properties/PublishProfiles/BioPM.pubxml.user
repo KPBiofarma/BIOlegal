@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Al-Published\BioPM</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>06/14/2014 18:13:59</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>06/14/2014 18:13:58</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.UI.Combined.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/BioPM.dll">
+      <publishTime>06/14/2014 18:13:36</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/26/2014 16:11:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>04/26/2014 16:11:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Membership.OpenAuth.dll">
+      <publishTime>04/26/2014 16:11:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/26/2014 16:11:38</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/09/2013 11:04:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="ClassEngines/PageDataExport.aspx">
+      <publishTime>04/29/2014 08:54:58</publishTime>
+    </File>
+    <File Include="ClassEngines/PageProductionTransaction.aspx">
+      <publishTime>06/11/2014 08:57:31</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>04/26/2014 16:11:28</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_222222_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_454545_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_888888_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery-ui.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.accordion.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.all.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.autocomplete.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.base.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.button.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.core.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.datepicker.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.dialog.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.progressbar.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.resizable.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.selectable.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.slider.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.tabs.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/jquery.ui.theme.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_222222_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_454545_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_888888_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery-ui.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.accordion.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.autocomplete.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.button.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.core.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.datepicker.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.dialog.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.progressbar.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.resizable.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.selectable.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.slider.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.tabs.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Content/themes/base/minified/jquery.ui.theme.min.css">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>04/26/2014 19:43:30</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/26/2014 16:11:28</publishTime>
+    </File>
+    <File Include="FormGenerateAnimalRandom.aspx">
+      <publishTime>06/06/2014 14:20:41</publishTime>
+    </File>
+    <File Include="FormGenerateDiphtheriaPotency.aspx">
+      <publishTime>06/06/2014 14:20:41</publishTime>
+    </File>
+    <File Include="FormGenerateDiphtheriaPotencyCloned.aspx">
+      <publishTime>06/06/2014 14:20:41</publishTime>
+    </File>
+    <File Include="FormGenerateHepatitisPotency.aspx">
+      <publishTime>06/06/2014 14:20:41</publishTime>
+    </File>
+    <File Include="FormGenerateHepatitisPotencyCloned.aspx">
+      <publishTime>06/06/2014 16:03:41</publishTime>
+    </File>
+    <File Include="FormGenerateMaterialPackage.aspx">
+      <publishTime>05/23/2014 10:43:26</publishTime>
+    </File>
+    <File Include="FormGenerateMultiAnimalRandom.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateMWGT.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateNVT.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateNVTCloned.aspx">
+      <publishTime>06/11/2014 10:48:28</publishTime>
+    </File>
+    <File Include="FormGenerateNVTClonedSecond.aspx">
+      <publishTime>06/11/2014 11:14:19</publishTime>
+    </File>
+    <File Include="FormGeneratePertussisPotency.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGeneratePertussisPotencyCloned.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGeneratePotencyDemo.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateQCTest.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateRawMaterialNPlan.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateRawMaterialSample.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateRawMaterialSampleCloned.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateRawMatrialNPlan.aspx">
+      <publishTime>05/23/2014 10:33:12</publishTime>
+    </File>
+    <File Include="FormGenerateTetanusPotency.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormGenerateTetanusPotencyCloned.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormInputBatch.aspx">
+      <publishTime>06/09/2014 16:04:32</publishTime>
+    </File>
+    <File Include="FormInputBatchTransaction.aspx">
+      <publishTime>06/12/2014 09:29:26</publishTime>
+    </File>
+    <File Include="FormInputDilution.aspx">
+      <publishTime>06/06/2014 14:20:42</publishTime>
+    </File>
+    <File Include="FormInputItem.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputItemGroup.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputNVTBuilding.aspx">
+      <publishTime>06/09/2014 16:05:34</publishTime>
+    </File>
+    <File Include="FormInputProduct.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputProductGroup.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputProduction.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputProductQualityControl.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputProductType.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputQualityControlType.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputStyle.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputVaccineGroup.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputVendor.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormInputVendorGroup.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormRegisterUser.aspx">
+      <publishTime>06/09/2014 16:06:48</publishTime>
+    </File>
+    <File Include="FormRegisterUserCloned.aspx">
+      <publishTime>06/09/2014 22:17:20</publishTime>
+    </File>
+    <File Include="FormReportAnimalRandom.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormReportDiphtheriaPotency.aspx">
+      <publishTime>06/10/2014 07:43:52</publishTime>
+    </File>
+    <File Include="FormReportHepatitisPotency.aspx">
+      <publishTime>06/10/2014 07:43:42</publishTime>
+    </File>
+    <File Include="FormReportMWGT.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormReportNVT.aspx">
+      <publishTime>06/14/2014 16:02:51</publishTime>
+    </File>
+    <File Include="FormReportPertussisPotency.aspx">
+      <publishTime>06/10/2014 07:43:32</publishTime>
+    </File>
+    <File Include="FormReportQCTest.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormReportRawMaterialRandom.aspx">
+      <publishTime>06/06/2014 14:20:43</publishTime>
+    </File>
+    <File Include="FormReportTetanusPotency.aspx">
+      <publishTime>06/10/2014 07:43:19</publishTime>
+    </File>
+    <File Include="FormUpdateBatch.aspx">
+      <publishTime>06/12/2014 08:27:54</publishTime>
+    </File>
+    <File Include="FormUpdateBatchTransaction.aspx">
+      <publishTime>06/12/2014 09:30:00</publishTime>
+    </File>
+    <File Include="FormUpdateDilutionBatchQC.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateItem.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateItemGroup.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateMWGTBatchQC.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateNVTBuilding.aspx">
+      <publishTime>06/14/2014 15:46:06</publishTime>
+    </File>
+    <File Include="FormUpdateProduct.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateProductGroup.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateProductQualityControl.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateProductType.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateQualityControlType.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateSample.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateSampleCloned.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateStyle.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateVaccineGroup.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateVendor.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FormUpdateVendorGroup.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="FromGenerateNVTClonedSecond.aspx">
+      <publishTime>06/11/2014 10:02:34</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/26/2014 16:11:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/26/2014 16:11:40</publishTime>
+    </File>
+    <File Include="PageBatch.aspx">
+      <publishTime>06/10/2014 15:55:54</publishTime>
+    </File>
+    <File Include="PageBatchProductProduction.aspx">
+      <publishTime>06/13/2014 15:14:35</publishTime>
+    </File>
+    <File Include="PageBatchProductProductionApproval.aspx">
+      <publishTime>06/13/2014 15:18:42</publishTime>
+    </File>
+    <File Include="PageBatchProductProductionReview.aspx">
+      <publishTime>06/13/2014 15:19:07</publishTime>
+    </File>
+    <File Include="PageBatchProductQualityControl.aspx">
+      <publishTime>06/13/2014 15:22:08</publishTime>
+    </File>
+    <File Include="PageBatchQualityControlApproval.aspx">
+      <publishTime>06/13/2014 15:00:58</publishTime>
+    </File>
+    <File Include="PageBatchQualityControlReview.aspx">
+      <publishTime>06/13/2014 15:00:44</publishTime>
+    </File>
+    <File Include="PageBatchTransaction.aspx">
+      <publishTime>06/12/2014 08:25:02</publishTime>
+    </File>
+    <File Include="PageCompanyEmployee.aspx">
+      <publishTime>06/09/2014 16:07:01</publishTime>
+    </File>
+    <File Include="PageDilutionSample.aspx">
+      <publishTime>06/10/2014 15:55:54</publishTime>
+    </File>
+    <File Include="PageInformation.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="PageInputProductFormulation.aspx">
+      <publishTime>06/06/2014 14:20:44</publishTime>
+    </File>
+    <File Include="PageItem.aspx">
+      <publishTime>06/10/2014 15:55:54</publishTime>
+    </File>
+    <File Include="PageItemGroup.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageLogin.aspx">
+      <publishTime>06/11/2014 13:03:04</publishTime>
+    </File>
+    <File Include="PageLoginCloned.aspx">
+      <publishTime>06/13/2014 10:49:50</publishTime>
+    </File>
+    <File Include="PageLoginCTI.aspx">
+      <publishTime>06/04/2014 12:53:43</publishTime>
+    </File>
+    <File Include="PageNVTBuilding.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageProduct.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageProductFormulation.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageProductGroup.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageProduction.aspx">
+      <publishTime>04/29/2014 14:55:00</publishTime>
+    </File>
+    <File Include="PageProductionTransaction.aspx">
+      <publishTime>06/13/2014 15:24:52</publishTime>
+    </File>
+    <File Include="PageProductionTransactionApproval.aspx">
+      <publishTime>06/13/2014 15:25:43</publishTime>
+    </File>
+    <File Include="PageProductionTransactionReview.aspx">
+      <publishTime>06/13/2014 15:26:06</publishTime>
+    </File>
+    <File Include="PageProductQualityControl.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageProductTransaction.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageProductTransactionReview.aspx">
+      <publishTime>06/14/2014 15:30:30</publishTime>
+    </File>
+    <File Include="PageProductType.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageQualityAssuranceTransaction.aspx">
+      <publishTime>06/12/2014 08:00:13</publishTime>
+    </File>
+    <File Include="PageQualityControlTransaction.aspx">
+      <publishTime>06/13/2014 16:19:10</publishTime>
+    </File>
+    <File Include="PageQualityControlTransactionReview.aspx">
+      <publishTime>06/12/2014 08:00:01</publishTime>
+    </File>
+    <File Include="PageQualityControlType.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageReport.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageReportAnimalRandom.aspx">
+      <publishTime>06/05/2014 11:12:08</publishTime>
+    </File>
+    <File Include="PageReportMWGT.aspx">
+      <publishTime>06/05/2014 12:53:31</publishTime>
+    </File>
+    <File Include="PageReportNVT.aspx">
+      <publishTime>06/14/2014 16:07:32</publishTime>
+    </File>
+    <File Include="PageReportRawMaterialRandom.aspx">
+      <publishTime>06/05/2014 15:27:40</publishTime>
+    </File>
+    <File Include="PageReportSampleRandom.aspx">
+      <publishTime>06/05/2014 13:28:54</publishTime>
+    </File>
+    <File Include="PageSampleAnimalRandom.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageSampleDilutionRandom.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageSampleDilutionRandomDemo.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageSampleMultiAnimalRandom.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageSampleMWGT.aspx">
+      <publishTime>06/09/2014 16:10:14</publishTime>
+    </File>
+    <File Include="PageSampleNVT.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageSampleRawMaterialNPlanRandom.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageSampleRawMaterialRandom.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageScheduledEmail.aspx">
+      <publishTime>05/08/2014 13:02:04</publishTime>
+    </File>
+    <File Include="PageStyle.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageUpdateProductFormulation.aspx">
+      <publishTime>06/06/2014 14:20:45</publishTime>
+    </File>
+    <File Include="PageUserActiveAccount.aspx">
+      <publishTime>06/10/2014 07:30:05</publishTime>
+    </File>
+    <File Include="PageUserAdminReference.aspx">
+      <publishTime>05/05/2014 17:29:30</publishTime>
+    </File>
+    <File Include="PageUserPanel.aspx">
+      <publishTime>06/12/2014 07:38:07</publishTime>
+    </File>
+    <File Include="PageUserProfile.aspx">
+      <publishTime>06/06/2014 14:20:50</publishTime>
+    </File>
+    <File Include="PageVaccineGroup.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageVendor.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PageVendorGroup.aspx">
+      <publishTime>06/10/2014 15:55:55</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>06/14/2014 18:13:56</publishTime>
+    </File>
+    <File Include="ReportCloned.aspx">
+      <publishTime>06/02/2014 19:23:11</publishTime>
+    </File>
+    <File Include="sample.aspx">
+      <publishTime>06/06/2014 14:20:46</publishTime>
+    </File>
+    <File Include="Sample2.aspx">
+      <publishTime>05/11/2014 14:46:14</publishTime>
+    </File>
+    <File Include="SampleFetchData.aspx">
+      <publishTime>06/12/2014 14:58:20</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.js">
+      <publishTime>04/26/2014 16:11:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>04/26/2014 16:11:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.js">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.min.js">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Scripts/login.css">
+      <publishTime>05/14/2014 16:04:06</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/26/2014 16:11:36</publishTime>
+    </File>
+    <File Include="Service References/WS_CTI/BioPM.WS_CTI.CTIAppUsers.datasource">
+      <publishTime>06/04/2014 08:05:16</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>04/26/2014 16:11:28</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>04/26/2014 16:11:40</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>04/26/2014 16:11:40</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/09/2014 22:17:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
