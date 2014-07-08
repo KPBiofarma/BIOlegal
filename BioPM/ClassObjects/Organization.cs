@@ -30,7 +30,7 @@ namespace BioPM.ClassObjects
         }
 
         public static void UpdateOrganization(string ORGID, string QAOID, string ORGTY, string ORGNM, string USRDT)
-        {
+       {
             string date = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
             string maxdate = DateTime.MaxValue.ToString("MM/dd/yyyy HH:mm");
             string delimit = DateTime.Now.AddMinutes(-1).ToString("MM/dd/yyyy HH:mm");
@@ -56,7 +56,7 @@ namespace BioPM.ClassObjects
             string maxdate = DateTime.MaxValue.ToString("MM/dd/yyyy HH:mm");
             string delimit = DateTime.Now.AddMinutes(-1).ToString("MM/dd/yyyy HH:mm");
             SqlConnection conn = GetConnection();
-            string sqlCmd = @"UPDATE bioumum.ORGANIZATION SET ENDDA = '" + delimit + "', CHGDT = '" + date + "', USRDT = '" + USRDT + "' WHERE (ORGID = '" + ORGID + "' AND BEGDA <= GETDATE() AND ENDDA >= GETDATE()";
+            string sqlCmd = @"UPDATE bioumum.ORGANIZATION SET ENDDA = '" + delimit + "', CHGDT = '" + date + "', USRDT = '" + USRDT + "' WHERE (ORGID = '" + ORGID + "' AND BEGDA <= GETDATE() AND ENDDA >= GETDATE())";
 
             SqlCommand cmd = DatabaseFactory.GetCommand(conn, sqlCmd);
 

@@ -36,7 +36,6 @@
         txtDetail.Text = values[4].ToString();
     }
 
-    
     protected void SetDataToForm()
     {
         SetProduct();

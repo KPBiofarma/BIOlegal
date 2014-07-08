@@ -1,11 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormInputBatch.aspx.cs" Inherits="BioPM.FormInputBatch" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FormUpdateRisk.aspx.cs" Inherits="BioPM.FormUpdateRisk" %>
 
 <!DOCTYPE html>
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["username"] == null && Session["password"] == null) Response.Redirect("PageLogin.aspx");
-        //if (!IsPostBack) SetDataToForm();
+        if (!IsPostBack)
+        {
+        //    SetExistingOrganization();
+            SetDataToForm();
+        }
     }
     protected void sessionCreator()
     {
@@ -14,66 +18,85 @@
         Session["password"] = "admin1234";
         Session["role"] = "111111";
     }
+
+        
+    protected void SetDataToForm()
+    {
+        object[] values = BioPM.ClassObjects.RiskCatalog.GetRiskByID(Request.QueryString["key"]);
+        txtRegId.Text = values[0].ToString();
+        txtRiskEvent.Text = values[1].ToString();
+        ddlRiskAct.SelectedValue = values[2].ToString();
+        ddlRiskFunc.SelectedValue = values[3].ToString();
+        txtSuppDt.Text = values[4].ToString();
+        txtRiskCause.Text = values[5].ToString();
+        txtRiskLoc.Text = values[6].ToString();
+        lbProb.Text = values[7].ToString();
+        txtRiskImpact.Text = values[8].ToString();
+        lbRiskStatus.Text = values[9].ToString();
+        ddlRKMGT.SelectedValue = values[10].ToString();
+        txFreq.Text = values[11].ToString();   
+    }
     
-    //protected void SetExistingBagian()
+    //protected void SetExistingOrganization()
     //{
-    //    ddlBagian.Items.Clear();
-    //    ddlActivity.Items.Clear();
-    //    foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetRisk())
+    //    //ddlOrgParent.Items.Clear();
+    //    //ddlOrgChild.Items.Clear();
+    //    foreach(object[] data in BioPM.ClassObjects.OrganizationCatalog.GetOrganizations())
     //    {
-    //        ddlBagian.Items.Add(new List(data[0].ToString()));
-    //        ddlActivity.Items.Add(new List(data[0].ToString());
-    //    }
-    //}
-    
-    //protected void SetProduct()
-    //{
-    //    ddlProductType.Items.Clear();
-    //    foreach (object[] data in BioPM.ClassObjects.BatchCatalog.GetProductByCostCenter(Session["coctr"].ToString()))
-    //    {
-    //        ddlProductType.Items.Add(new ListItem(data[1].ToString(), data[0].ToString()));
+    //        //ddlOrgParent.Items.Add(new ListItem(data[2].ToString() + " - " + data[1].ToString() == "1" ? "unit" : "Position", data[0].ToString() + "|" + data[1].ToString() ));
+    //        //ddlOrgChild.Items.Add(new ListItem(data[2].ToString() + " - " + data[1].ToString() == "1" ? "unit" : "Position", data[0].ToString() + "|" + data[1].ToString()));
     //    }
     //}
 
-    //protected void SetDataToForm()
-    //{
-    //    SetProduct();
-    //}
-    
     protected void InsertRiskIntoDatabase()
     {
-        //string REGID = (BioPM.ClassObjects.RiskCatalog.GetRiskMatchID() + 1).ToString();        
-        string REGIDstr = ddlBagian.SelectedItem.Text + "-" + ddlActivity.SelectedItem.Text + "-" + txtREGID.Text;
-        BioPM.ClassObjects.RiskCatalog.InsertRisk(REGIDstr, txtRKEVT.Text, labelAct.Text, ddlRKFNC.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text,lbProb.Text, txtRiskImpact.Text, lbRiskStatus.Text, ddlRKMGT.SelectedItem.Text, txFreq.Text, Session["username"].ToString());
-
+        BioPM.ClassObjects.RiskCatalog.UpdateRisk(txtRegId.Text, txtRiskEvent.Text, ddlRiskAct.SelectedItem.Text, ddlRiskFunc.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text, lbProb.Text, txtRiskImpact.Text, lbRiskStatus.Text, ddlRKMGT.SelectedItem.Text, txFreq.Text, Session["username"].ToString());
     }
-
-    protected void btnCancel_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("PageUserPanel.aspx");
-    }
-    
-    protected void ddlActivity_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        labelAct.Text = ddlActivity.SelectedItem.Text;        
-    }
+      
+    //protected void ddlActivity_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    labelAct.Text = ddlActivity.SelectedItem.Text;
+    //}
 
     protected void btnPoisson_Click(object sender, EventArgs e)
     {
-       lbProb.Text = (BioPM.ClassEngines.ProbabilityAndStatisticFactory.DoPoissonProbability(txFreq.Text, txRata2.Text)).ToString();    
+        lbProb.Text = (BioPM.ClassEngines.ProbabilityAndStatisticFactory.DoPoissonProbability(txFreq.Text, txRata2.Text)).ToString();
+        txFreq.Visible = false;
+        txRata2.Visible = false;
+        txRskGagal.Visible = false;
+        txFreqKejSkses.Visible = false;
+        txSDev.Visible = false;
+        btnChangeProb.Visible = true;
+        btnPoisson.Visible = false;
+        ddlProbability.Visible = false;
     }
 
     protected void btnBinomial_Click(object sender, EventArgs e)
     {
-       lbProb.Text = (BioPM.ClassEngines.ProbabilityAndStatisticFactory.DoBinomialProbability(txRskGagal.Text, txFreq.Text ,txFreqKejSkses.Text)).ToString();
+        lbProb.Text = (BioPM.ClassEngines.ProbabilityAndStatisticFactory.DoBinomialProbability(txRskGagal.Text, txFreq.Text, txFreqKejSkses.Text)).ToString();
+        txFreq.Visible = false;
+        txRata2.Visible = false;
+        txRskGagal.Visible = false;
+        txFreqKejSkses.Visible = false;
+        txSDev.Visible = false;
+        btnChangeProb.Visible = true;
+        btnBinomial.Visible = false;
+        ddlProbability.Visible = false;
     }
 
     protected void btnNormal_Click(object sender, EventArgs e)
     {
-       lbProb.Text = (BioPM.ClassEngines.ProbabilityAndStatisticFactory.DoNormalDistribution(txFreq.Text, txRata2.Text, txSDev.Text)).ToString();   
+        lbProb.Text = (BioPM.ClassEngines.ProbabilityAndStatisticFactory.DoNormalDistribution(txFreq.Text, txRata2.Text, txSDev.Text)).ToString();
+        txFreq.Visible = false;
+        txRata2.Visible = false;
+        txRskGagal.Visible = false;
+        txFreqKejSkses.Visible = false;
+        txSDev.Visible = false;
+        btnChangeProb.Visible = true;
+        btnNormal.Visible = false;
+        ddlProbability.Visible = false;
     }
-    
-    
+
     protected void ddlProbability_SelectedIndexChanged(object sender, EventArgs e)
     {
         if (ddlProbability.SelectedIndex == 1)
@@ -99,7 +122,7 @@
             btnNormal.Visible = false;
         }
         else if (ddlProbability.SelectedIndex == 3)
-        {   
+        {
             txFreq.Visible = true;
             txRata2.Visible = true;
             txRskGagal.Visible = false;
@@ -108,14 +131,25 @@
             btnPoisson.Visible = false;
             btnBinomial.Visible = false;
             btnNormal.Visible = true;
-        }    
+        }
+    }
+    
+    protected void btnChangeProb_Click(object sender, EventArgs e)
+    {
+        ddlProbability.Visible = true;
+        btnChangeProb.Visible = false;
     }
 
     protected void txtRiskImpact_TextChanged(object sender, EventArgs e)
     {
-        
+
         lbRiskStatus.Text = (Convert.ToDouble(lbProb.Text) * Convert.ToDouble(txtRiskImpact.Text)).ToString();
-        
+
+    }
+   
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("PageUserPanel.aspx");
     }
 
     protected void btnSave_Click(object sender, EventArgs e)
@@ -130,20 +164,18 @@
             ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "YOUR PASSWORD IS INCORRECT" + "');", true);
         }
     }
-    
 </script>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <% Response.Write(BioPM.ClassScripts.BasicScripts.GetMetaScript()); %>
 
-    <title>RISK ENTRY</title>
+    <title>UPDATE RISK</title>
 
     <% Response.Write(BioPM.ClassScripts.StyleScripts.GetCoreStyle()); %>
     <% Response.Write(BioPM.ClassScripts.StyleScripts.GetFormStyle()); %>
     <% Response.Write(BioPM.ClassScripts.StyleScripts.GetCustomStyle()); %>
 </head>
-
 <body>
 
 <section id="container" >
@@ -175,44 +207,38 @@
                         <form id="Form1" class="form-horizontal " runat="server" >
                         
                         <div class="form-group">
-                            <label class="col-sm-3 control-label"> NO REGISTRASI </label>
+                            <label class="col-sm-3 control-label"> REGISTRATION ID </label>
                             <div class="col-lg-3 col-md-4">
-                                <asp:DropDownList ID="ddlBagian" style="width:auto; display:inline;" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_BAGIAN" DataTextField="KDBAG" DataValueField="KDBAG"></asp:DropDownList>
-                                <asp:Label runat="server" Text=" - "></asp:Label>
-                                <asp:DropDownList ID="ddlActivity" style="width:auto; display:inline;" AutoPostBack="true" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="KDACT" DataValueField="KDACT" OnSelectedIndexChanged="ddlActivity_SelectedIndexChanged"></asp:DropDownList>
-                                <asp:Label runat="server" Text=" - "></asp:Label>
-                                <asp:TextBox ID="txtREGID" runat="server" style="width:110px; display:inline;" class="form-control m-bot15"></asp:TextBox>
-                                <asp:SqlDataSource ID="sqlRISK_BAGIAN" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[BAGIAN].[KDBAG]
-FROM [biolegal].[BAGIAN]"></asp:SqlDataSource>
-                                <span class="help-block">Hint : Kode Unit/Kode Aktivitas/No. Urut</></span>
+                                <asp:TextBox ID="txtRegId" runat="server" class="form-control m-bot15" placeholder="REGISTRATION ID" ReadOnly="true"></asp:TextBox>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"> RISK EVENT </label>
+                            <div class="col-lg-3 col-md-4">
+                                <asp:TextBox ID="txtRiskEvent" runat="server" class="form-control m-bot15" placeholder="RISK EVENT" ></asp:TextBox>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"> RISK ACTIVITY </label>
+                            <div class="col-md-4 col-lg-3">
+                                <asp:DropDownList ID="ddlRiskAct" style="width:auto; display:inline;" AutoPostBack="true" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="KDACT" DataValueField="KDACT" ReadOnly="true" ></asp:DropDownList>
                                 <asp:SqlDataSource ID="sqlRISK_ACTIVITY" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[KDACT]
 FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label"> RISK EVENT </label>
-                            <div class="col-lg-3 col-md-4">
-                                <asp:TextBox ID="txtRKEVT" runat="server" class="form-control m-bot15" placeholder="RISK EVENT" ></asp:TextBox>
-                            </div>
-                        </div>
-                            
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label"> RISK ACTIVITY </label>
-                            <div class="col-md-4 col-lg-3">
-                                <asp:Label ID="labelAct" runat="server" AutoPostBack="true" class="form-control m-bot15"></asp:Label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK FUNCTION </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlRKFNC" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="NMFNC" DataValueField="NMFNC"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlRiskFunc" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="NMFNC" DataValueField="NMFNC"></asp:DropDownList>
                                 <asp:SqlDataSource ID="sqlRISK_FUNC" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_FUNCTION].[NMFNC]
 FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                             </div>
                         </div>
-
+                        
+                        
                        <div class="form-group">
                             <label class="col-sm-3 control-label"> SUPPORTED DATA </label>
                             <div class="col-md-4 col-lg-3">
@@ -233,11 +259,12 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                                 <asp:TextBox ID="txtRiskLoc" runat="server" class="form-control m-bot15" placeholder="RISK LOCATION" ></asp:TextBox>
                             </div>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="col-sm-3 control-label"> RISK PROBABILITY </label>
+                        <label class="col-sm-3 control-label"> RISK PROBABILITY </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlProbability" class="form-control m-bot15" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlProbability_SelectedIndexChanged">
+                                <asp:Label ID="lbProb" runat="server" AutoPostBack="true" class="form-control m-bot15"></asp:Label>
+                                <asp:DropDownList ID="ddlProbability" class="form-control m-bot15" AutoPostBack="true" Visible="false" runat="server" OnSelectedIndexChanged="ddlProbability_SelectedIndexChanged">
                                     <asp:ListItem> </asp:ListItem>
                                     <asp:ListItem>Poisson</asp:ListItem>
                                     <asp:ListItem>Binomial</asp:ListItem>
@@ -250,19 +277,13 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                                 <asp:TextBox ID="txSDev" class="form-control m-bot15" runat="server" placeholder="Standard Deviasi" Visible="false"></asp:TextBox>
                             </div>
                             <div class="col-md-4 col-lg-3">
+                                <asp:Button ID="btnChangeProb" runat="server" class="btn btn-round btn-primary" Text="Change" OnClick="btnChangeProb_Click"/>
                                 <asp:Button ID="btnPoisson" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnPoisson_Click" />
                                 <asp:Button ID="btnBinomial" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnBinomial_Click" />
                                 <asp:Button ID="btnNormal" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnNormal_Click" />
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label"> PROBABILITY RESULT </label>
-                            <div class="col-md-4 col-lg-3">
-                                <asp:Label ID="lbProb" runat="server" AutoPostBack="true" class="form-control m-bot15"></asp:Label>
-                            </div>
-                        </div>
-
+            
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK IMPACT </label>
                             <div class="col-md-4 col-lg-3">
@@ -284,7 +305,7 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                                 <asp:SqlDataSource ID="sqlRISK_MANAGEMENT" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_MANAGEMENT].[NMMGT]
 FROM [biolegal].[RISK_MANAGEMENT]"></asp:SqlDataSource>
                             </div>
-                        </div>                        
+                        </div> 
 
                         <!-- Modal -->
                         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">

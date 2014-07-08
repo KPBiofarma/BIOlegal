@@ -141,8 +141,8 @@
                 }*/
             case "21":
                 {
-                    BioPM.ClassObjects.RiskCatalog.DeleteRisk(ID);
-                    message = "DELETE SUCCESS! PRODUCT ID " + ID + " HAS BEEN DELETED. <a href='PageRisk.aspx'>BACK</a>.";
+                    BioPM.ClassObjects.RiskCatalog.DeleteRisk(ID, Session["username"].ToString());
+                    message = "DELETE SUCCESS! REGISTER ID " + ID + " HAS BEEN DELETED. <a href='PageRisk.aspx'>BACK</a>.";
                     break;
                 }
             default :

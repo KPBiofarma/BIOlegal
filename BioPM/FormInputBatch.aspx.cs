@@ -13,5 +13,25 @@ namespace BioPM
         {
 
         }
+
+        protected void ddlRKACT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlActivity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnHitProb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtRiskImpact_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

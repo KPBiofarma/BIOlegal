@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
@@ -132,6 +133,7 @@
     <Content Include="FormGenerateNVTClonedSecond.aspx" />
     <Content Include="FormUpdateOrganization.aspx" />
     <Content Include="FormUpdateOrganizationStructure.aspx" />
+    <Content Include="FormUpdateRisk.aspx" />
     <Content Include="PageBatchProductProduction.aspx" />
     <Content Include="PageBatchProductProductionApproval.aspx" />
     <Content Include="PageBatchProductProductionReview.aspx" />
@@ -141,6 +143,7 @@
     <Content Include="PageBatchProductQualityControl.aspx" />
     <Content Include="PageBatchProductQualityControlApproval.aspx" />
     <Content Include="PageBatchProductQualityControlReview.aspx" />
+    <Content Include="PageDummy.aspx" />
     <Content Include="PageLabel.aspx" />
     <Content Include="PageLabelBatch.aspx" />
     <Content Include="PageLabelCategory.aspx" />
@@ -336,6 +339,7 @@
     <Compile Include="ClassEngines\PageDataExport.aspx.designer.cs">
       <DependentUpon>PageDataExport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClassEngines\ProbabilityAndStatisticFactory.cs" />
     <Compile Include="ClassObjects\Organization.cs" />
     <Compile Include="ClassObjects\QC.cs" />
     <Compile Include="ClassObjects\Risk.cs" />
@@ -523,6 +527,13 @@
     <Compile Include="FormUpdateOrganizationStructure.aspx.designer.cs">
       <DependentUpon>FormUpdateOrganizationStructure.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FormUpdateRisk.aspx.cs">
+      <DependentUpon>FormUpdateRisk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormUpdateRisk.aspx.designer.cs">
+      <DependentUpon>FormUpdateRisk.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PageBatchProductProduction.aspx.cs">
       <DependentUpon>PageBatchProductProduction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -585,6 +596,13 @@
     </Compile>
     <Compile Include="PageBatchProductQualityControlReview.aspx.designer.cs">
       <DependentUpon>PageBatchProductQualityControlReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageDummy.aspx.cs">
+      <DependentUpon>PageDummy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageDummy.aspx.designer.cs">
+      <DependentUpon>PageDummy.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageLabel.aspx.cs">
       <DependentUpon>PageLabel.aspx</DependentUpon>

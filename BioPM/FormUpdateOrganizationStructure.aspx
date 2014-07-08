@@ -19,6 +19,8 @@
         Session["role"] = "111111";
     }
     
+    
+    
     protected void SetDataToForm()
     {
         object[] values = BioPM.ClassObjects.OrganizationCatalog.GetOrganizationStructureByID(BioPM.ClassEngines.CryptographFactory.Decrypt(Request.QueryString["key"], true));
@@ -42,7 +44,7 @@
     {
         BioPM.ClassObjects.OrganizationCatalog.UpdateOrganizationStructure(BioPM.ClassEngines.CryptographFactory.Decrypt(Request.QueryString["key"], true), ddlOrgParent.SelectedValue.Split('|')[0], ddlOrgParent.SelectedValue.Split('|')[1], ddlOrgChild.SelectedValue.Split('|')[0], ddlOrgChild.SelectedValue.Split('|')[1], txtOrgLevel.Text, Session["username"].ToString());
     }
-
+    
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         if (IsPostBack) InsertOrganizationIntoDatabase();

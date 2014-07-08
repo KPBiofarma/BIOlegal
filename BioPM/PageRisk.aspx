@@ -21,7 +21,7 @@
 
         foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetRisk())
         {
-            htmlelement += "<tr class=''><td>" + BioPM.ClassEngines.DateFormatFactory.GetDateFormat(data[0].ToString()) + "</td><td>" + data[1].ToString() + "</td><td>" + data[2].ToString() + "</td><td>" + data[3].ToString() + "</td><td><a class='edit' href='FormUpdateBatch.aspx?key=" + data[0].ToString() + "'>Edit</a></td><td><a class='delete' href='PageInformation.aspx?key=" + data[0].ToString() + "&type=21'>Delete</a></td></tr>";
+            htmlelement += "<tr class=''><td>" + BioPM.ClassEngines.DateFormatFactory.GetDateFormat(data[0].ToString()) + "</td><td>" + data[1].ToString() + "</td><td>" + data[2].ToString() + "</td><td>" + data[3].ToString() + "</td><td><a class='edit' href='FormUpdateRisk.aspx?key=" + data[1].ToString() + "'>Edit</a></td><td><a class='delete' href='PageInformation.aspx?key=" + data[1].ToString() + "&type=21'>Delete</a></td></tr>";
         }
         
         return htmlelement;
@@ -34,7 +34,7 @@
 <head>
 <% Response.Write(BioPM.ClassScripts.BasicScripts.GetMetaScript()); %>
 
-    <title>BATCH</title>
+    <title>RIKSK</title>
     
 <% Response.Write(BioPM.ClassScripts.StyleScripts.GetCoreStyle()); %>
 <% Response.Write(BioPM.ClassScripts.StyleScripts.GetTableStyle()); %>
