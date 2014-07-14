@@ -7,21 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace BioPM
 {
-    public partial class PageDummy : System.Web.UI.Page
+    public partial class PageDocument : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnGet_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnFrq_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

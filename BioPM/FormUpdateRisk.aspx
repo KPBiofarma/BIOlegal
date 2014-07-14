@@ -23,18 +23,19 @@
     protected void SetDataToForm()
     {
         object[] values = BioPM.ClassObjects.RiskCatalog.GetRiskByID(Request.QueryString["key"]);
-        txtRegId.Text = values[0].ToString();
-        txtRiskEvent.Text = values[1].ToString();
-        ddlRiskAct.SelectedValue = values[2].ToString();
-        ddlRiskFunc.SelectedValue = values[3].ToString();
-        txtSuppDt.Text = values[4].ToString();
-        txtRiskCause.Text = values[5].ToString();
-        txtRiskLoc.Text = values[6].ToString();
-        lbProb.Text = values[7].ToString();
-        txtRiskImpact.Text = values[8].ToString();
-        lbRiskStatus.Text = values[9].ToString();
-        ddlRKMGT.SelectedValue = values[10].ToString();
-        txFreq.Text = values[11].ToString();   
+        txtORGID.Text = values[0].ToString();
+        txtACTID.Text = values[1].ToString();
+        txtRSKID.Text = values[2].ToString();
+        txtRiskEvent.Text = values[3].ToString();
+        ddlRiskAct.SelectedValue = values[4].ToString();
+        ddlRiskFunc.SelectedValue = values[5].ToString();
+        txtSuppDt.Text = values[6].ToString();
+        txtRiskCause.Text = values[7].ToString();
+        txtRiskLoc.Text = values[8].ToString();
+        lbProb.Text = values[9].ToString();
+        txtRiskImpact.Text = values[10].ToString();
+        lbRiskStatus.Text = values[11].ToString();
+        ddlRKMGT.SelectedValue = values[12].ToString(); 
     }
     
     //protected void SetExistingOrganization()
@@ -50,7 +51,7 @@
 
     protected void InsertRiskIntoDatabase()
     {
-        BioPM.ClassObjects.RiskCatalog.UpdateRisk(txtRegId.Text, txtRiskEvent.Text, ddlRiskAct.SelectedItem.Text, ddlRiskFunc.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text, lbProb.Text, txtRiskImpact.Text, lbRiskStatus.Text, ddlRKMGT.SelectedItem.Text, txFreq.Text, Session["username"].ToString());
+        BioPM.ClassObjects.RiskCatalog.UpdateRisk(txtORGID.Text, txtACTID.Text, txtRSKID.Text, txtRiskEvent.Text, ddlRiskAct.SelectedItem.Text, ddlRiskFunc.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text, lbProb.Text, txtRiskImpact.Text, lbRiskStatus.Text, ddlRKMGT.SelectedItem.Text, Session["username"].ToString());
     }
       
     //protected void ddlActivity_SelectedIndexChanged(object sender, EventArgs e)
@@ -209,7 +210,11 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> REGISTRATION ID </label>
                             <div class="col-lg-3 col-md-4">
-                                <asp:TextBox ID="txtRegId" runat="server" class="form-control m-bot15" placeholder="REGISTRATION ID" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox ID="txtORGID" style="width:auto; display:inline;" runat="server" class="form-control m-bot15" placeholder="REGISTRATION ID" ReadOnly="true"></asp:TextBox>
+                                <asp:Label ID="Label2" runat="server" Text=" - "></asp:Label>
+                                <asp:TextBox ID="txtACTID" style="width:auto; display:inline;" runat="server" class="form-control m-bot15" placeholder="REGISTRATION ID" ReadOnly="true"></asp:TextBox>
+                                <asp:Label ID="Label3" runat="server" Text=" - "></asp:Label>
+                                <asp:TextBox ID="txtRSKID" style="width:auto; display:inline;" runat="server" class="form-control m-bot15" placeholder="REGISTRATION ID" ReadOnly="true"></asp:TextBox>
                             </div>
                         </div>
     
@@ -217,14 +222,15 @@
                             <label class="col-sm-3 control-label"> RISK EVENT </label>
                             <div class="col-lg-3 col-md-4">
                                 <asp:TextBox ID="txtRiskEvent" runat="server" class="form-control m-bot15" placeholder="RISK EVENT" ></asp:TextBox>
+                                <asp:Label ID="Label1" runat="server" Text=" - "></asp:Label>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK ACTIVITY </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlRiskAct" style="width:auto; display:inline;" AutoPostBack="true" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="KDACT" DataValueField="KDACT" ReadOnly="true" ></asp:DropDownList>
-                                <asp:SqlDataSource ID="sqlRISK_ACTIVITY" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[KDACT]
+                                <asp:DropDownList ID="ddlRiskAct" style="width:auto; display:inline;" AutoPostBack="true" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="ACTID" DataValueField="ACTID" ReadOnly="true" ></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_ACTIVITY" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[ACTID]
 FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
                             </div>
                         </div>
@@ -232,8 +238,8 @@ FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK FUNCTION </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlRiskFunc" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="NMFNC" DataValueField="NMFNC"></asp:DropDownList>
-                                <asp:SqlDataSource ID="sqlRISK_FUNC" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_FUNCTION].[NMFNC]
+                                <asp:DropDownList ID="ddlRiskFunc" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="FNCNM" DataValueField="FNCNM"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_FUNC" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_FUNCTION].[FNCNM]
 FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                             </div>
                         </div>
@@ -278,9 +284,9 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                             </div>
                             <div class="col-md-4 col-lg-3">
                                 <asp:Button ID="btnChangeProb" runat="server" class="btn btn-round btn-primary" Text="Change" OnClick="btnChangeProb_Click"/>
-                                <asp:Button ID="btnPoisson" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnPoisson_Click" />
-                                <asp:Button ID="btnBinomial" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnBinomial_Click" />
-                                <asp:Button ID="btnNormal" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnNormal_Click" />
+                                <asp:Button ID="btnPoisson" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Calculate" OnClick="btnPoisson_Click" />
+                                <asp:Button ID="btnBinomial" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Calculate" OnClick="btnBinomial_Click" />
+                                <asp:Button ID="btnNormal" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Calculate" OnClick="btnNormal_Click" />
                             </div>
                         </div>
             
@@ -301,8 +307,8 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK MAINTENANCE </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlRKMGT" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_MANAGEMENT" DataTextField="NMMGT" DataValueField="NMMGT" ></asp:DropDownList>
-                                <asp:SqlDataSource ID="sqlRISK_MANAGEMENT" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_MANAGEMENT].[NMMGT]
+                                <asp:DropDownList ID="ddlRKMGT" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_MANAGEMENT" DataTextField="MGTNM" DataValueField="MGTNM" ></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_MANAGEMENT" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_MANAGEMENT].[MGTNM]
 FROM [biolegal].[RISK_MANAGEMENT]"></asp:SqlDataSource>
                             </div>
                         </div> 

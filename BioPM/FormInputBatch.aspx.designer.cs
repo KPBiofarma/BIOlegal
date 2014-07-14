@@ -256,40 +256,40 @@ namespace BioPM {
         protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_MANAGEMENT;
         
         /// <summary>
-        /// txtConfirmation control.
+        /// txtConfirmationRisk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmation;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmationRisk;
         
         /// <summary>
-        /// btnClose control.
+        /// btnCloseRisk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Button btnCloseRisk;
         
         /// <summary>
-        /// btnSubmit control.
+        /// btnSubmitRisk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnSubmitRisk;
         
         /// <summary>
-        /// btnAction control.
+        /// btnActionRisk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAction;
+        protected global::System.Web.UI.WebControls.LinkButton btnActionRisk;
         
         /// <summary>
         /// btnCancel control.

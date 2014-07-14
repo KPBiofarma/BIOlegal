@@ -17,7 +17,7 @@ namespace BioPM.ClassScripts
             sb.Append("<header class='header fixed-top clearfix'>                                       ");
             sb.Append("<div class='brand'>                                                              ");
             sb.Append("<a href='PageUserPanel.aspx' class='logo'>                                       ");
-            sb.Append("<p>BIO-Legal</p>                                                                    ");
+            sb.Append("<p><h2>BIO-Legal</h2></p>                                                                    ");
             sb.Append("</a>                                                                             ");
             sb.Append("<div class='sidebar-toggle-box'>                                                 ");
             sb.Append("<div class='fa fa-bars'></div>                                                   ");

@@ -12,10 +12,10 @@ namespace BioPM.ClassEngines
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet data = DataImportFactory.ImportDataFromExcel("C:\\Users\\Public\\Documents\\KP\\Data Risk.xlsx");
+            DataSet data = DataImportFactory.ImportDataFromExcel("C:\\Users\\Public\\Documents\\KP\\Excel Data\\Data Risk Activity.xlsx");
             if (data != null)
             {
-                DataExportFactory.ExportDataToSqlServerForRisk(data);
+                DataExportFactory.ExportDataToSqlServerForRiskAct(data);
                 Response.Write("Export Successed!");
             }
             else

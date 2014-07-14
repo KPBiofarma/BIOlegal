@@ -112,6 +112,7 @@
     <Content Include="FormGenerateMultiAnimalRandomPertussis.aspx" />
     <Content Include="FormGenerateMultiAnimalRandomTetanus.aspx" />
     <Content Include="FormInputBatchTransaction.aspx" />
+    <Content Include="FormInputDocument.aspx" />
     <Content Include="FormInputLabel.aspx" />
     <Content Include="FormInputLabelBatch.aspx" />
     <Content Include="FormInputLabelCategory.aspx" />
@@ -143,6 +144,7 @@
     <Content Include="PageBatchProductQualityControl.aspx" />
     <Content Include="PageBatchProductQualityControlApproval.aspx" />
     <Content Include="PageBatchProductQualityControlReview.aspx" />
+    <Content Include="PageDocument.aspx" />
     <Content Include="PageDummy.aspx" />
     <Content Include="PageLabel.aspx" />
     <Content Include="PageLabelBatch.aspx" />
@@ -193,6 +195,7 @@
     <Content Include="PageReportNVT.aspx" />
     <Content Include="PageReportRawMaterialRandom.aspx" />
     <Content Include="PageRisk.aspx" />
+    <Content Include="PageRiskRating.aspx" />
     <Content Include="PageSampleDilutionRandomDemo.aspx" />
     <Content Include="PageSampleMultiAnimalRandom.aspx" />
     <Content Include="PageSampleNVT.aspx" />
@@ -340,6 +343,7 @@
       <DependentUpon>PageDataExport.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClassEngines\ProbabilityAndStatisticFactory.cs" />
+    <Compile Include="ClassObjects\Document.cs" />
     <Compile Include="ClassObjects\Organization.cs" />
     <Compile Include="ClassObjects\QC.cs" />
     <Compile Include="ClassObjects\Risk.cs" />
@@ -379,6 +383,13 @@
     </Compile>
     <Compile Include="FormInputBatchTransaction.aspx.designer.cs">
       <DependentUpon>FormInputBatchTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputDocument.aspx.cs">
+      <DependentUpon>FormInputDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormInputDocument.aspx.designer.cs">
+      <DependentUpon>FormInputDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormInputLabel.aspx.cs">
       <DependentUpon>FormInputLabel.aspx</DependentUpon>
@@ -596,6 +607,13 @@
     </Compile>
     <Compile Include="PageBatchProductQualityControlReview.aspx.designer.cs">
       <DependentUpon>PageBatchProductQualityControlReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageDocument.aspx.cs">
+      <DependentUpon>PageDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageDocument.aspx.designer.cs">
+      <DependentUpon>PageDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageDummy.aspx.cs">
       <DependentUpon>PageDummy.aspx</DependentUpon>
@@ -949,6 +967,13 @@
     </Compile>
     <Compile Include="PageRisk.aspx.designer.cs">
       <DependentUpon>PageRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageRiskRating.aspx.cs">
+      <DependentUpon>PageRiskRating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageRiskRating.aspx.designer.cs">
+      <DependentUpon>PageRiskRating.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageSampleDilutionRandomDemo.aspx.cs">
       <DependentUpon>PageSampleDilutionRandomDemo.aspx</DependentUpon>

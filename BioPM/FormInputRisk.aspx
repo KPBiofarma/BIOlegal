@@ -14,38 +14,26 @@
         Session["password"] = "admin1234";
         Session["role"] = "111111";
     }
-    
-    //protected void SetExistingBagian()
-    //{
-    //    ddlBagian.Items.Clear();
-    //    ddlActivity.Items.Clear();
-    //    foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetRisk())
-    //    {
-    //        ddlBagian.Items.Add(new List(data[0].ToString()));
-    //        ddlActivity.Items.Add(new List(data[0].ToString());
-    //    }
-    //}
-    
-    //protected void SetProduct()
-    //{
-    //    ddlProductType.Items.Clear();
-    //    foreach (object[] data in BioPM.ClassObjects.BatchCatalog.GetProductByCostCenter(Session["coctr"].ToString()))
-    //    {
-    //        ddlProductType.Items.Add(new ListItem(data[1].ToString(), data[0].ToString()));
-    //    }
-    //}
 
-    //protected void SetDataToForm()
-    //{
-    //    SetProduct();
-    //}
+    protected double GetFrequency(string function)
+    {
+        return Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetFrequencyByFunction(function));
+    }
+    
+    protected void SetProbability()
+    {
+        double sum = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetFrequencySum());
+        double num = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetNumberofFunction());
+        
+    }
+    
+    
     
     protected void InsertRiskIntoDatabase()
     {
-        //string REGID = (BioPM.ClassObjects.RiskCatalog.GetRiskMatchID() + 1).ToString();        
-        string REGIDstr = ddlBagian.SelectedItem.Text + "-" + ddlActivity.SelectedItem.Text + "-" + txtREGID.Text;
-        BioPM.ClassObjects.RiskCatalog.InsertRisk(REGIDstr, txtRKEVT.Text, labelAct.Text, ddlRKFNC.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text,lbProb.Text, txtRiskImpact.Text, lbRiskStatus.Text, ddlRKMGT.SelectedItem.Text, txFreq.Text, Session["username"].ToString());
-
+        string RSKID = (BioPM.ClassObjects.RiskCatalog.GetRiskMatchID() + 1).ToString();        
+        //string REGIDstr = ddlBagian.SelectedItem.Text + "-" + ddlActivity.SelectedItem.Text + "-" + txtREGID.Text;
+        BioPM.ClassObjects.RiskCatalog.InsertRisk(ddlBagian.SelectedItem.Value, ddlActivity.SelectedItem.Text, RSKID, txtRKEVT.Text, labelAct.Text, ddlRKFNC.SelectedItem.Text, txtSuppDt.Text, txtRiskCause.Text, txtRiskLoc.Text,lbProb.Text, txtRiskImpact.Text, lbRiskStatus.Text, ddlRKMGT.SelectedItem.Text, Session["username"].ToString());
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -120,7 +108,7 @@
 
     protected void btnSave_Click(object sender, EventArgs e)
     {
-        if (Session["password"].ToString() == BioPM.ClassEngines.CryptographFactory.Encrypt(txtConfirmation.Text, true))
+        if (Session["password"].ToString() == BioPM.ClassEngines.CryptographFactory.Encrypt(txtConfirmationRisk.Text, true))
         {
             InsertRiskIntoDatabase();
             Response.Redirect("PageRisk.aspx");
@@ -179,13 +167,13 @@
                             <div class="col-lg-3 col-md-4">
                                 <asp:DropDownList ID="ddlBagian" style="width:auto; display:inline;" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_BAGIAN" DataTextField="KDBAG" DataValueField="KDBAG"></asp:DropDownList>
                                 <asp:Label runat="server" Text=" - "></asp:Label>
-                                <asp:DropDownList ID="ddlActivity" style="width:auto; display:inline;" AutoPostBack="true" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="KDACT" DataValueField="KDACT" OnSelectedIndexChanged="ddlActivity_SelectedIndexChanged"></asp:DropDownList>
-                                <asp:Label runat="server" Text=" - "></asp:Label>
-                                <asp:TextBox ID="txtREGID" runat="server" style="width:110px; display:inline;" class="form-control m-bot15"></asp:TextBox>
+                                <asp:DropDownList ID="ddlActivity" style="width:auto; display:inline;" AutoPostBack="true" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_ACTIVITY" DataTextField="ACTID" DataValueField="ACTID" OnSelectedIndexChanged="ddlActivity_SelectedIndexChanged"></asp:DropDownList>
+                                <!--<asp:Label runat="server" Text=" - "></asp:Label>!-->
+                                <!--<asp:TextBox ID="txtREGID" runat="server" style="width:110px; display:inline;" class="form-control m-bot15"></asp:TextBox>!-->
                                 <asp:SqlDataSource ID="sqlRISK_BAGIAN" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[BAGIAN].[KDBAG]
 FROM [biolegal].[BAGIAN]"></asp:SqlDataSource>
-                                <span class="help-block">Hint : Kode Unit/Kode Aktivitas/No. Urut</></span>
-                                <asp:SqlDataSource ID="sqlRISK_ACTIVITY" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[KDACT]
+                                <span class="help-block">Hint : Kode Unit - Kode Aktivitas</></span>
+                                <asp:SqlDataSource ID="sqlRISK_ACTIVITY" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_ACTIVITY].[ACTID]
 FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
                             </div>
                         </div>
@@ -207,8 +195,8 @@ FROM [biolegal].[RISK_ACTIVITY]"></asp:SqlDataSource>
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK FUNCTION </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlRKFNC" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="NMFNC" DataValueField="NMFNC"></asp:DropDownList>
-                                <asp:SqlDataSource ID="sqlRISK_FUNC" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_FUNCTION].[NMFNC]
+                                <asp:DropDownList ID="ddlRKFNC" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_FUNC" DataTextField="FNCNM" DataValueField="FNCNM"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_FUNC" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_FUNCTION].[FNCNM]
 FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                             </div>
                         </div>
@@ -238,7 +226,7 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                             <label class="col-sm-3 control-label"> RISK PROBABILITY </label>
                             <div class="col-md-4 col-lg-3">
                                 <asp:DropDownList ID="ddlProbability" class="form-control m-bot15" AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddlProbability_SelectedIndexChanged">
-                                    <asp:ListItem> </asp:ListItem>
+                                    <asp:ListItem> Choose Probability</asp:ListItem>
                                     <asp:ListItem>Poisson</asp:ListItem>
                                     <asp:ListItem>Binomial</asp:ListItem>
                                     <asp:ListItem>Normal</asp:ListItem>
@@ -250,9 +238,9 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                                 <asp:TextBox ID="txSDev" class="form-control m-bot15" runat="server" placeholder="Standard Deviasi" Visible="false"></asp:TextBox>
                             </div>
                             <div class="col-md-4 col-lg-3">
-                                <asp:Button ID="btnPoisson" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnPoisson_Click" />
-                                <asp:Button ID="btnBinomial" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnBinomial_Click" />
-                                <asp:Button ID="btnNormal" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Count" OnClick="btnNormal_Click" />
+                                <asp:Button ID="btnPoisson" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Calculate" OnClick="btnPoisson_Click" />
+                                <asp:Button ID="btnBinomial" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Calculate" OnClick="btnBinomial_Click" />
+                                <asp:Button ID="btnNormal" runat="server" class="btn btn-round btn-primary" Visible="false" Text="Calculate" OnClick="btnNormal_Click" />
                             </div>
                         </div>
 
@@ -280,8 +268,8 @@ FROM [biolegal].[RISK_FUNCTION]"></asp:SqlDataSource>
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> RISK MAINTENANCE </label>
                             <div class="col-md-4 col-lg-3">
-                                <asp:DropDownList ID="ddlRKMGT" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_MANAGEMENT" DataTextField="NMMGT" DataValueField="NMMGT" ></asp:DropDownList>
-                                <asp:SqlDataSource ID="sqlRISK_MANAGEMENT" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_MANAGEMENT].[NMMGT]
+                                <asp:DropDownList ID="ddlRKMGT" runat="server" class="form-control m-bot15" DataSourceID="sqlRISK_MANAGEMENT" DataTextField="MGTNM" DataValueField="MGTNM" ></asp:DropDownList>
+                                <asp:SqlDataSource ID="sqlRISK_MANAGEMENT" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [biolegal].[RISK_MANAGEMENT].[MGTNM]
 FROM [biolegal].[RISK_MANAGEMENT]"></asp:SqlDataSource>
                             </div>
                         </div>                        
@@ -297,12 +285,12 @@ FROM [biolegal].[RISK_MANAGEMENT]"></asp:SqlDataSource>
                                     <div class="modal-body">
                                         <p>You Are Logged In As <% Response.Write(Session["name"].ToString()); %></p><br />
                                         <p>Are you sure to insert into database?</p>
-                                        <asp:TextBox ID="txtConfirmation" runat="server" TextMode="Password" placeholder="Confirmation Password" class="form-control placeholder-no-fix"></asp:TextBox>
+                                        <asp:TextBox ID="txtConfirmationRisk" runat="server" TextMode="Password" placeholder="Confirmation Password" class="form-control placeholder-no-fix"></asp:TextBox>
 
                                     </div>
                                     <div class="modal-footer">
-                                        <asp:Button ID="btnClose" runat="server" data-dismiss="modal" class="btn btn-default" Text="Cancel"></asp:Button>
-                                        <asp:Button ID="btnSubmit" runat="server" class="btn btn-success" Text="Confirm" OnClick="btnSave_Click"></asp:Button>
+                                        <asp:Button ID="btnCloseRisk" runat="server" data-dismiss="modal" class="btn btn-default" Text="Cancel"></asp:Button>
+                                        <asp:Button ID="btnSubmitRisk" runat="server" class="btn btn-success" Text="Confirm" OnClick="btnSave_Click"></asp:Button>
                                     </div>
                                 </div>
                             </div>
@@ -313,7 +301,7 @@ FROM [biolegal].[RISK_MANAGEMENT]"></asp:SqlDataSource>
                         <div class="form-group">
                             <label class="col-sm-3 control-label"> </label>
                             <div class="col-lg-3 col-md-3">
-                                <asp:LinkButton data-toggle="modal" class="btn btn-round btn-primary" ID="btnAction" runat="server" Text="Save" href="#myModal"/>
+                                <asp:LinkButton data-toggle="modal" class="btn btn-round btn-primary" ID="btnActionRisk" runat="server" Text="Save" href="#myModal"/>
                                 <asp:Button class="btn btn-round btn-primary" ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click"/>
                             </div>
                         </div>

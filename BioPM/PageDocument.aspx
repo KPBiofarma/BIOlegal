@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PageBatch.aspx.cs" Inherits="BioPM.PageBatch" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PageDocument.aspx.cs" Inherits="BioPM.PageBatch" %>
 
 <!DOCTYPE html>
 <script runat="server">
@@ -15,52 +15,27 @@
         Session["role"] = "111111";
     }
 
-    protected String GenerateRisk()
+    protected String GenerateDocument()
     {
         string htmlelement = "";
-
-        foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetRisks())
-        {
-            string RSKID = data[1].ToString() +  " - " + data[2].ToString() + " - " + data[3].ToString();
-            htmlelement += "<tr class=''><td>" + BioPM.ClassEngines.DateFormatFactory.GetDateFormat(data[0].ToString()) + "</td><td>" + RSKID + "</td><td>" + data[4].ToString() + "</td><td>" + data[5].ToString() + "</td><td>" + data[6].ToString() + "</td><td><a class='edit' href='FormUpdateRisk.aspx?key=" + data[3].ToString() + "'>Edit</a></td><td><a class='delete' href='PageInformation.aspx?key=" + data[3].ToString() + "&type=21'>Delete</a></td></tr>";
+        string url = "/TempUpload/";
+        foreach (object[] data in BioPM.ClassObjects.Document.GetDocument())
+        { 
+             htmlelement += "<tr class=''><td>" + BioPM.ClassEngines.DateFormatFactory.GetDateFormat(data[0].ToString()) + "</td><td>" + data[1].ToString() + "</td><td>" + data[2].ToString() + "</td><td><a class='view' href='" + url + data[1].ToString() + "'>View</a></td><td><a class='delete' href='#'" + "&type=21'>Delete</a></td></tr>";
+            
         }
         
         return htmlelement;
     }
 
-    /*
-    protected String GenerateLaporan() 
-    { 
-        string htmlelement = ""; 
-        string jenis = "Laporan Nyaris Celaka"; 
-        foreach (object[] data in BioPM.ClassObjects.EHSValue.GetIDLaporanByJenis(jenis)) 
-        { 
-            string begda_convert = BioEHS.ClassEngines.DateFormatFactory.GetDateTimeFormat(data[0].ToString()); 
-            string endda_convert = BioEHS.ClassEngines.DateFormatFactory.GetDateTimeFormat(data[1].ToString()); 
-            string maxval_convert = BioEHS.ClassEngines.DateFormatFactory.GetDateTimeFormat(DateTime.MaxValue.ToString("MM/dd/yyyy HH:mm").ToString()) + ":00"; 
-            if (endda_convert.CompareTo(maxval_convert) == 0) 
-            { 
-                string status = BioEHS.ClassObjects.EHSValue.GetStatusLapByID(data[0].ToString(), data[1].ToString(), data[2].ToString()); 
-                if ((status.CompareTo("Disahkan")) != 0) 
-                { 
-                    string begda = data[0].ToString(); string endda = data[1].ToString(); htmlelement += "<tr class=''><td>" + begda_convert + "</td><td>" + data[3].ToString() + "</td><td><a class='edit' href='UpdateFormulir1.aspx?begda=" + begda + "&endda=" + endda + "&key=" + data[2].ToString() + "'>Edit</a></td><td><a class='delete' href='PageInformation.aspx?begda=" + begda + "&endda=" + endda + "&key=" + data[2].ToString() + "&type=7'>Delete</a></td></tr>"; 
-                } 
-            } 
-        } 
-        return htmlelement; 
-    }
-     */
-
-    
-    
-    
+   
 </script>
 
 <html lang="en">
 <head>
 <% Response.Write(BioPM.ClassScripts.BasicScripts.GetMetaScript()); %>
 
-    <title>RIKSK</title>
+    <title>DOCUMENT</title>
     
 <% Response.Write(BioPM.ClassScripts.StyleScripts.GetCoreStyle()); %>
 <% Response.Write(BioPM.ClassScripts.StyleScripts.GetTableStyle()); %>
@@ -99,7 +74,7 @@
                         <div class="adv-table">
                             <div class="clearfix">
                                 <div class="btn-group">
-                                    <button id="editable-sample_new" onclick="document.location.href='FormInputRisk.aspx';" class="btn btn-primary"> Add New <i class="fa fa-plus"></i>
+                                    <button id="editable-sample_new" onclick="document.location.href='FormInputDocument.aspx';" class="btn btn-primary"> Add New <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                                 <div class="btn-group pull-right">
@@ -116,16 +91,14 @@
                                 <thead>
                                 <tr>
                                     <th>CREATED DATE</th>
-                                    <th>NO. REG</th>
-                                    <th>RISIKO KEJADIAN</th>
-                                    <th>FUNGSI</th>
-                                    <th>PENGELOLAAN</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>DOCUMENT ID</th>
+                                    <th>DOCUMENT NAME</th> 
+                                    <th>View</th>
+                                    <th>Delete</th> 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <% Response.Write(GenerateRisk()); %>
+                                <% Response.Write(GenerateDocument()); %>
                                 </tbody>
                             </table>
                         </div>
