@@ -32,14 +32,14 @@ namespace BioPM.ClassEngines
 
     public class DataExportFactory : DatabaseFactory
     {
-        public static void ExportDataToSqlServerForRiskAct(DataSet data)
+        public static void ExportDataToSqlServerForParam(DataSet data)
         {
             for (int i = 0; i < data.Tables[0].Rows.Count; i++)
             {
                 string date = DateTime.Today.ToString("MM/dd/yyyy");
                 SqlConnection conn = GetConnection();
-                string sqlCmd = @"INSERT INTO biolegal.RISK_ACTIVITY (BEGDA, ENDDA, ACTID, ACTNM, CHGDT, USRDT) 
-                                VALUES('" + "03/07/2014 " + "','" + "12/31/9999" + "','" + data.Tables[0].Rows[i][0].ToString() + "','" + data.Tables[0].Rows[i][1].ToString() + "', GETDATE(), 'K495')";
+                string sqlCmd = @"INSERT INTO bioumum.PARAMETER (BEGDA, ENDDA, PRMID, PRMTY, PRMKD, PRMNM, CHGDT, USRDT) 
+                                VALUES('" + "03/07/2014 " + "','" + "12/31/9999 23:59:59.000" + "','" + data.Tables[0].Rows[i][0].ToString() + "','" + data.Tables[0].Rows[i][1].ToString() + "', '" + data.Tables[0].Rows[i][2].ToString() + "', '" + data.Tables[0].Rows[i][3].ToString() + "' , GETDATE(), 'K495')";
                 SqlCommand cmd = DatabaseFactory.GetCommand(conn, sqlCmd);
 
                 try
@@ -53,6 +53,51 @@ namespace BioPM.ClassEngines
                 }
             }
         }
+
+        public static void ExportDataToSqlServerForRiskImpact(DataSet data)
+        {
+            for (int i = 0; i < data.Tables[0].Rows.Count; i++)
+            {
+                string date = DateTime.Today.ToString("MM/dd/yyyy");
+                SqlConnection conn = GetConnection();
+                string sqlCmd = @"INSERT INTO biolegal.RISK_IMPACT (BEGDA, ENDDA, RNGTY, RNGKD, UPPER, LOWER, RTING, CHGDT, USRDT) 
+                                VALUES('" + "03/07/2014 " + "','" + "12/31/9999" + "','" + data.Tables[0].Rows[i][0].ToString() + "','" + data.Tables[0].Rows[i][1].ToString() + "', '" + data.Tables[0].Rows[i][2].ToString() + "', '" + data.Tables[0].Rows[i][3].ToString() + "', '" + data.Tables[0].Rows[i][4].ToString() + "'   , GETDATE(), 'K495')";
+                SqlCommand cmd = DatabaseFactory.GetCommand(conn, sqlCmd);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public static void ExportDataToSqlServerForRisk(DataSet data)
+        {
+            for (int i = 0; i < data.Tables[0].Rows.Count; i++)
+            {
+                string date = DateTime.Today.ToString("MM/dd/yyyy");
+                SqlConnection conn = GetConnection();
+                string sqlCmd = @"INSERT INTO biolegal.RISK (BEGDA, ENDDA, ORGID, ACTID, RSKID, RKEVT, RKACT, RKFNC, SUPDT, RKCAU, RKLOC, RKFRQ, RKPRB, RKIBS, RKIMP, RKSTT, RKMGT, CHGDT, USRDT) 
+                                VALUES('" + data.Tables[0].Rows[i][0].ToString() + "','" + "12/31/9999" + "','" + data.Tables[0].Rows[i][1].ToString() + "','" + data.Tables[0].Rows[i][2].ToString() + "', '" + data.Tables[0].Rows[i][3].ToString() + "', '" + data.Tables[0].Rows[i][4].ToString() + "' , '" + data.Tables[0].Rows[i][5].ToString() + "' , '" + data.Tables[0].Rows[i][6].ToString() + "','" + data.Tables[0].Rows[i][7].ToString() + "', '" + data.Tables[0].Rows[i][8].ToString() + "', '" + data.Tables[0].Rows[i][9].ToString() + "' , '" + data.Tables[0].Rows[i][10].ToString() + "', '" + data.Tables[0].Rows[i][11].ToString() + "' , '" + data.Tables[0].Rows[i][12].ToString() + "' , '" + data.Tables[0].Rows[i][13].ToString() + "' , '" + data.Tables[0].Rows[i][14].ToString() + "' , '" + data.Tables[0].Rows[i][15].ToString() + "'  ,GETDATE(), 'K495')";
+                SqlCommand cmd = DatabaseFactory.GetCommand(conn, sqlCmd);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
 
         public static void ExportDataToSqlServerForUserRole(DataSet data)
         {

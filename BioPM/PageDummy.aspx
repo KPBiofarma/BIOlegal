@@ -55,6 +55,37 @@
         Label4.Text = range4.ToString();
         Label5.Text = range5.ToString(); 
     }
+
+    protected double CalcMean()
+    {
+        double sumf = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetFrequencySum());
+        double numf = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetNumberofFunction());
+        return sumf / numf;
+    }
+
+    protected double ProcStdDev(double x)
+    {
+        double mean = CalcMean();
+        return Math.Pow((x - mean), 2);
+    }
+
+    protected double CalcStdDev()
+    {
+        double i = 0;
+
+        foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetFrequenciesPerFunction())
+        {
+            i += ProcStdDev(Convert.ToDouble(data[1].ToString()));
+        }
+
+        return Math.Sqrt(i / (Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetNumofData()) - 1));
+    }
+    
+    
+    protected void btnTesProb_Click(object sender, EventArgs e)
+    {
+        
+    }
 </script>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -73,7 +104,9 @@
         <asp:Label ID="Label2" runat="server" AutoPostBack="true"></asp:Label>  <br />   
         <asp:Label ID="Label3" runat="server" AutoPostBack="true"></asp:Label>  <br />
         <asp:Label ID="Label4" runat="server" AutoPostBack="true"></asp:Label>  <br />
-        <asp:Label ID="Label5" runat="server" AutoPostBack="true"></asp:Label>  <br />                
+        <asp:Label ID="Label5" runat="server" AutoPostBack="true"></asp:Label>  <br /> 
+        <asp:Button ID="btnTesProb" runat="server" AutoPostBack="true" OnClick="btnTesProb_Click" />
+        <asp:Label ID="lbTesPron" runat="server" AutoPostBack="true"></asp:Label>               
     </div>
     </form>
 </body>

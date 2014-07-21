@@ -8,16 +8,18 @@ namespace BioPM.ClassObjects
 {
     public class RiskCatalog : DatabaseFactory
     {
+        /* Section: Default CRUD query */
+
         public static void InsertRisk( string ORGID, string ACTID, string RSKID, string RKEVT, string RKACT, 
-                                       string RKFNC, string SUPDT, string RKCAU, string RKLOC, string RKPRB, 
-                                       string RKIMP, string RKSTT, string RKMGT, string USRDT )
+                                       string RKFNC, string SUPDT, string RKCAU, string RKLOC, string RKFRQ, string RKPRB, 
+                                       string RKIBS, string RKIMP, string RKSTT, string RKMGT, string USRDT )
         {
             string date = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
             string maxdate = DateTime.MaxValue.ToString("MM/dd/yyyy HH:mm:ss");
             SqlConnection conn = GetConnection();
 
-            string sqlCmd = @"INSERT INTO biolegal.RISK( BEGDA, ENDDA, ORGID, ACTID, RSKID, RKEVT, RKACT, RKFNC, SUPDT, RKCAU, RKLOC, RKPRB, RKIMP, RKSTT, RKMGT, CHGDT, USRDT )
-                            VALUES ( '"+ date +"', '"+ maxdate +"', '"+ ORGID +"', '"+ ACTID +"', '"+ RSKID +"', '"+ RKEVT +"', '"+ RKACT +"', '"+ RKFNC +"', '"+ SUPDT +"', '"+ RKCAU +"', '"+ RKLOC +"', '"+ RKPRB +"', '"+ RKIMP +"', '"+ RKSTT +"', '"+ RKMGT +"', '"+ date +"', '"+ USRDT +"');";         
+            string sqlCmd = @"INSERT INTO biolegal.RISK( BEGDA, ENDDA, ORGID, ACTID, RSKID, RKEVT, RKACT, RKFNC, SUPDT, RKCAU, RKLOC, RKFRQ, RKPRB, RKIBS, RKIMP, RKSTT, RKMGT, CHGDT, USRDT )
+                            VALUES ( '"+ date +"', '"+ maxdate +"', '"+ ORGID +"', '"+ ACTID +"', '"+ RSKID +"', '"+ RKEVT +"', '"+ RKACT +"', '"+ RKFNC +"', '"+ SUPDT +"', '"+ RKCAU +"', '"+ RKLOC +"', '"+ RKFRQ +"' ,'"+ RKPRB +"', '"+ RKIBS +"', '"+ RKIMP +"', '"+ RKSTT +"', '"+ RKMGT +"', '"+ date +"', '"+ USRDT +"');";         
             SqlCommand cmd = DatabaseFactory.GetCommand(conn, sqlCmd);
 
             try
@@ -31,9 +33,9 @@ namespace BioPM.ClassObjects
             }
         }
 
-        public static void UpdateRisk( string ORGID, string ACTID, string RSKID, string RKEVT, string RKACT, 
-                                       string RKFNC, string SUPDT, string RKCAU, string RKLOC, string RKPRB, 
-                                       string RKIMP, string RKSTT, string RKMGT, string USRDT )
+        public static void UpdateRisk( string ORGID, string ACTID, string RSKID, string RKEVT, string RKACT,
+                                       string RKFNC, string SUPDT, string RKCAU, string RKLOC, string RKFRQ, string RKPRB,
+                                       string RKIBS, string RKIMP, string RKSTT, string RKMGT, string USRDT)
         {
             string date = DateTime.Now.ToString("MM/dd/yyyy HH:mm");
             string yesterday = DateTime.Now.AddMinutes(-1).ToString("MM/dd/yyyy HH:mm");
@@ -49,10 +51,9 @@ namespace BioPM.ClassObjects
             finally
             {
                 conn.Close();
-                InsertRisk(ORGID, ACTID, RSKID, RKEVT, RKACT, RKFNC, SUPDT, RKCAU, RKLOC, RKPRB, RKIMP, RKSTT, RKMGT, USRDT);
+                InsertRisk(ORGID, ACTID, RSKID, RKEVT, RKACT, RKFNC, SUPDT, RKCAU, RKLOC, RKFRQ, RKPRB, RKIBS, RKIMP, RKSTT, RKMGT, USRDT);
             }
         }
-
 
         public static void DeleteRisk(string RSKID, string USRDT)
         {
@@ -75,36 +76,39 @@ namespace BioPM.ClassObjects
             }
         }
 
-        public static object[] GetFrequenciesPerFunction()
+        /* Section: Get data risk */
+
+        public static List<object[]> GetRisks()
         {
             SqlConnection conn = GetConnection();
-            string sqlCmd = @"SELECT R.RKFNC, COUNT(1) AS RKFRQ
+            string sqlCmd = @"SELECT R.BEGDA, R.ORGID, R.ACTID, R.RSKID, R.RKEVT, R.RKFNC, R.RKMGT
                             FROM BIOFARMA.biolegal.RISK R
-                            GROUP BY R.RKFNC";
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE()
+                            ORDER BY R.RSKID ASC";
             SqlCommand cmd = GetCommand(conn, sqlCmd);
 
             try
             {
                 conn.Open();
                 SqlDataReader reader = GetDataReader(cmd);
-                object[] data = null;
+                List<object[]> samples = new List<object[]>();
+
                 while (reader.Read())
                 {
-                    object[] values = { reader[0].ToString(), reader[1].ToString() };
-                    data = values;
+                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), reader[6].ToString() };
+                    samples.Add(values);
                 }
-                return data;
+                return samples;
             }
             finally
             {
                 conn.Close();
             }
         }
-        
 
         public static object[] GetRiskByID(string RSKID)
         {
-            SqlConnection conn = GetConnection();       
+            SqlConnection conn = GetConnection();
             string sqlCmd = @"SELECT R.ORGID, R.ACTID, R.RSKID, R.RKEVT, R.RKACT, R.RKFNC, R.SUPDT, R.RKCAU, R.RKLOC, R.RKPRB, R.RKIMP, R.RKSTT, R.RKMGT
                             FROM biolegal.RISK R
                             WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE() AND R.RSKID = '" + RSKID + "'";
@@ -128,30 +132,482 @@ namespace BioPM.ClassObjects
             }
         }
 
-//        public static object[] GetRiskByStat()
-//        {
-//            SqlConnection conn = GetConnection();
+        public static int GetRiskMatchID()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT MAX(RSKID) FROM BIOFARMA.biolegal.RISK";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            string id = "0";
 
-//            string sqlCmd = @"SELECT R.RKSTT 
-//                              FROM biolegal.RISK R";
-//            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(0)) id = reader[0].ToString() + "";
+                }
+                return Convert.ToInt16(id);
+            }
+            finally
+            {
+                conn.Close();
+            }
 
-//            try
-//            {
-//                conn.Open();
-//                SqlDataReader reader = GetDataReader(cmd);
-//                object[] data = null;
-//                while (reader.Read())
-//                {
-//                    object[] values = { reader[0] };
-//                }
-//                return data;
-//            }
-//            finally
-//            {
-//                conn.Close();
-//            }
-//        }
+        }
+
+        public static List<object[]> GetDataFromParameter(string param)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT DISTINCT P.PRMNM, P.PRMKD
+	                            FROM bioumum.param P
+	                            WHERE P.PRMTY = '"+param+"'";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetExistingRegisterID()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT R.BEGDA, R.ORGID, R.ACTID, R.RSKID
+                            FROM BIOFARMA.biolegal.RISK R";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetDataFromOrganization()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT O.ORGID, O.ORGNM
+                            FROM BIOFARMA.bioumum.ORGANIZATION O
+                            ORDER BY O.ORGID";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetTop5Risk()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT TOP 5 R.RSKID, R.RKPRB
+                              FROM [BIOFARMA].[biolegal].[RISK] R
+                              ORDER BY R.RKSTT";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetDataforMean(string function)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT R.RKIMP, COUNT(DISTINCT(R.RSKID)) AS RKFRQ
+                            FROM BIOFARMA.biolegal.RISK R
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE() AND R.RKFNC = '" + function + "' GROUP BY R.RKIMP";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetListofImpacts(string function)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT R.RKIMP
+                            FROM BIOFARMA.biolegal.RISK R
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE() AND R.RKFNC = '" + function + "' ";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        /* Get reference for probability calculation */
+
+        public static List<object[]> GetAllFrequencyAndImpactSum()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT R.RKFNC, COUNT(DISTINCT(R.RSKID)) AS FRQSM, SUM(R.RKIMP) AS IMPSM
+                            FROM BIOFARMA.biolegal.RISK R
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE()
+                            GROUP BY R.RKFNC";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetFrequenciesPerFunction()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT R.RKFNC, COUNT(DISTINCT(R.RSKID)) AS RKFRQ
+                            FROM BIOFARMA.biolegal.RISK R
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE()
+                            GROUP BY R.RKFNC";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetLikelihoodRange()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT L.LOWER, L.UPPER, L.RTING
+	                        FROM BIOFARMA.biolegal.LIKELIHOOD_REF L";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        
+
+        public static List<object[]> GetConsequencesRange()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT DISTINCT L.LOWER, L.UPPER, L.RTING
+                            FROM BIOFARMA.biolegal.CONSEQUENCES_REF L";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<object[]> GetLikelihoodData()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT L.UPPER, L.LOWER, L.RNGPD, L.RTING
+	                        FROM BIOFARMA.biolegal.LIKELIHOOD_REF L";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = GetDataReader(cmd);
+                List<object[]> samples = new List<object[]>();
+                while (reader.Read())
+                {
+                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString() };
+                    samples.Add(values);
+                }
+                return samples;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static Object GetLikelihoodMapping(string upper, string lower, string year)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT DISTINCT(COUNT(T1.RYEAR)) AS FRQYR
+                            FROM 
+                            (
+	                            SELECT YEAR(R.BEGDA) AS RYEAR
+	                            FROM BIOFARMA.biolegal.RISK R
+	                            WHERE YEAR(R.BEGDA) = '"+ year +"' AND ( R.RKPRB <= '"+ upper +"' AND R.RKPRB >= '"+ lower +"' )) T1";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static Object GetImpactSumByFunction(string function)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT SUM(R.RKIMP)
+                            FROM BIOFARMA.biolegal.RISK R
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE() AND R.RKFNC = '" + function + "'";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static Object GetReferenceValue(string year)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT R.IRVAL
+                            FROM BIOFARMA.biolegal.IMPACT_REF R
+                            WHERE R.IRFYR = '"+year+"'";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+ 
+        public static Object GetFrequencyByFunction(string function)
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT COUNT(DISTINCT(R.RSKID)) AS RKFRQ
+                            FROM BIOFARMA.biolegal.RISK R
+                            WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE() AND R.RKFNC = '" + function + "'";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static Object GetNumberofFunction()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT COUNT(P.PRMTY)
+                            FROM BIOFARMA.bioumum.param P
+                            WHERE P.PRMTY = 'RF'";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static Object GetFrequencySum()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT SUM(T1.RKFRQ) AS SMFRQ
+                            FROM 
+                            (
+                                SELECT R.RKFNC, COUNT(DISTINCT(R.RSKID)) AS RKFRQ
+		                        FROM BIOFARMA.biolegal.RISK R
+		                        WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE()
+		                        GROUP BY R.RKFNC
+                            ) T1";
+
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static Object GetNumofData()
+        {
+            SqlConnection conn = GetConnection();
+            string sqlCmd = @"SELECT COUNT(DISTINCT(R.RSKID))
+                            FROM BIOFARMA.biolegal.RISK R
+	                        WHERE R.BEGDA <= GETDATE() AND R.ENDDA >= GETDATE()";
+            SqlCommand cmd = GetCommand(conn, sqlCmd);
+            Object returnVal;
+
+            try
+            {
+                conn.Open();
+                returnVal = cmd.ExecuteScalar();
+                return returnVal;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+
 
         public static Object GetMaxRiskImpact()
         {
@@ -170,7 +626,6 @@ namespace BioPM.ClassObjects
             {
                 conn.Close();
             }
-
         }
 
         public static Object GetMinRiskImpact()
@@ -231,126 +686,6 @@ namespace BioPM.ClassObjects
                 conn.Close();
             }
 
-        }
-
-        public static Object GetFrequencyByFunction(string function)
-        {
-            SqlConnection conn = GetConnection();
-            string sqlCmd = @"SELECT COUNT(1) AS RKFRQ
-                            FROM BIOFARMA.biolegal.RISK R
-                            WHERE R.RKFNC = '"+ function +"'";
-
-            SqlCommand cmd = GetCommand(conn, sqlCmd);
-            Object returnVal;
-
-            try
-            {
-                conn.Open();
-                returnVal = cmd.ExecuteScalar();
-                return returnVal;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-
-        public static Object GetNumberofFunction()
-        {
-            SqlConnection conn = GetConnection();
-            string sqlCmd = @"SELECT COUNT(DISTINCT(R.FNCID))
-	                        FROM BIOFARMA.biolegal.RISK_FUNCTION R";
-            SqlCommand cmd = GetCommand(conn, sqlCmd);
-            Object returnVal;
-
-            try
-            {
-                conn.Open();
-                returnVal = cmd.ExecuteScalar();
-                return returnVal;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-        public static Object GetFrequencySum()
-        {
-            SqlConnection conn = GetConnection();
-            string sqlCmd = @"SELECT SUM(T1.RKFRQ) AS SMFRQ
-	                        FROM 
-	                        (
-		                        SELECT R.RKFNC, COUNT(1) AS RKFRQ
-                                FROM BIOFARMA.biolegal.RISK R
-                                GROUP BY R.RKFNC
-	                        ) T1";
-
-            SqlCommand cmd = GetCommand(conn, sqlCmd);
-            Object returnVal;
-
-            try
-            {
-                conn.Open();
-                returnVal = cmd.ExecuteScalar();
-                return returnVal;
-            }
-            finally
-            {
-                conn.Close();
-            }  
-        }
-        
-        public static int GetRiskMatchID()
-        {
-            SqlConnection conn = GetConnection();
-            string sqlCmd = @"SELECT MAX(RSKID) FROM biolegal.RISK";
-            SqlCommand cmd = GetCommand(conn, sqlCmd);
-            string id = "0";
-
-            try
-            {
-                conn.Open();
-                SqlDataReader reader = GetDataReader(cmd);
-                while (reader.Read())
-                {
-                    if (!reader.IsDBNull(0)) id = reader[0].ToString() + "";
-                }
-                return Convert.ToInt16(id);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-        }
-
-        public static List<object[]> GetRisks()
-        {
-            SqlConnection conn = GetConnection();
-            string sqlCmd = @"SELECT R.BEGDA, R.ORGID, R.ACTID, R.RSKID, R.RKEVT, R.RKFNC, R.RKMGT
-                                FROM biolegal.RISK R
-                                ORDER BY R.BEGDA ASC, R.RSKID DESC";
-            SqlCommand cmd = GetCommand(conn, sqlCmd);
-
-            try
-            {
-                conn.Open();
-                SqlDataReader reader = GetDataReader(cmd);
-                List<object[]> samples = new List<object[]>();
-
-                while(reader.Read())
-                {
-                    object[] values = { reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), reader[6].ToString() };
-                    samples.Add(values);
-                }
-                return samples;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }            
+        }      
     }
 }

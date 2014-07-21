@@ -23,5 +23,10 @@ namespace BioPM
         {
 
         }
+
+        protected void btnTesProb_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

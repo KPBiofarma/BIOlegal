@@ -18,5 +18,10 @@ namespace BioPM
         {
 
         }
+
+        protected void txtProb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

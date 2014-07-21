@@ -85,22 +85,13 @@ namespace BioPM {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ddlRiskAct control.
+        /// labelAct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlRiskAct;
-        
-        /// <summary>
-        /// sqlRISK_ACTIVITY control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_ACTIVITY;
+        protected global::System.Web.UI.WebControls.Label labelAct;
         
         /// <summary>
         /// ddlRiskFunc control.
@@ -110,15 +101,6 @@ namespace BioPM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRiskFunc;
-        
-        /// <summary>
-        /// sqlRISK_FUNC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_FUNC;
         
         /// <summary>
         /// txtSuppDt control.
@@ -148,13 +130,13 @@ namespace BioPM {
         protected global::System.Web.UI.WebControls.TextBox txtRiskLoc;
         
         /// <summary>
-        /// lbProb control.
+        /// ddlFrequency control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbProb;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFrequency;
         
         /// <summary>
         /// ddlProbability control.
@@ -164,6 +146,15 @@ namespace BioPM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlProbability;
+        
+        /// <summary>
+        /// txtProb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProb;
         
         /// <summary>
         /// txFreq control.
@@ -247,6 +238,15 @@ namespace BioPM {
         protected global::System.Web.UI.WebControls.Button btnNormal;
         
         /// <summary>
+        /// ddlImpactBase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlImpactBase;
+        
+        /// <summary>
         /// txtRiskImpact control.
         /// </summary>
         /// <remarks>
@@ -272,15 +272,6 @@ namespace BioPM {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRKMGT;
-        
-        /// <summary>
-        /// sqlRISK_MANAGEMENT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sqlRISK_MANAGEMENT;
         
         /// <summary>
         /// txtConfirmation control.

@@ -4,7 +4,8 @@
 <script runat="server">
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["username"] == null && Session["password"] == null) Response.Redirect("PageLogin.aspx");
+        sessionCreator();
+        //if (Session["username"] == null && Session["password"] == null) Response.Redirect("PageLogin.aspx");
         SetDataTest();
     }
 
@@ -19,15 +20,30 @@
     string[] _ylegends;
     string[] _xlegends;
     string[,] _values;
+    string[,] _datavalues;
     double[] _ruleRanges;
     double[] _ruleRangesX;
     double[] _ruleRangesY;
     int[] _ruleResult;
+    int[] _ruleResultX;
+    int[] _ruleResultY;
+    
+    
+    protected void GetLikelihood()
+    {
+        foreach (object[] data in BioPM.ClassObjects.RiskCatalog.GetTop5Risk())
+        {
+            foreach (object[] test in BioPM.ClassObjects.RiskCatalog.GetLikelihoodData())
+            {
+                double rating = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetLikelihoodMapping(test[0].ToString(), test[1].ToString(), test[2].ToString()));   
+            }
+        }
+    }    
     
     protected void SetDataTest()
     {
         //BioPM.ClassObjects.RiskCatalog.GetRiskByStat();
-
+        /*
         double maksX = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetMaxRiskImpact());
         double minX = Convert.ToDouble(BioPM.ClassObjects.RiskCatalog.GetMinRiskImpact());
         double maksY = Convert.ToDouble(Convert.ToDecimal(BioPM.ClassObjects.RiskCatalog.GetMaxRiskFrequency()));
@@ -48,20 +64,44 @@
         double rangeY3 = rangeY2 + resultY;
         double rangeY4 = rangeY3 + resultY;
         double rangeY5 = rangeY4 + resultY;
+        */
+
+        List<object[]>  valuesY = BioPM.ClassObjects.RiskCatalog.GetLikelihoodRange();
+        _ruleRangesY = new double[valuesY.Count + 1];
+        _ruleResultY = new int[valuesY.Count];
         
+        for (int i = 0; i < valuesY.Count; i++)
+        {
+            _ruleRangesY[i] = Convert.ToDouble(valuesY[i][0]);
+            _ruleResultY[i] = Convert.ToInt16(valuesY[i][2]);
+        }
+        _ruleRangesY[valuesY.Count] = Convert.ToDouble(1);
+
         
+
+        List<object[]> valuesX = BioPM.ClassObjects.RiskCatalog.GetConsequencesRange();
+        _ruleRangesX = new double[valuesX.Count + 1];
+        _ruleResultX = new int[valuesX.Count];
+
+        for (int i = 0; i < valuesX.Count; i++)
+        {
+            _ruleRangesX[i] = Convert.ToDouble(valuesX[i][0]);
+            _ruleResultX[i] = Convert.ToInt16(valuesX[i][2]);
+        }
+        _ruleRangesX[valuesX.Count] = Convert.ToDouble(1);
+
         
         _ylegends = new string[5] { "Rare", "Possible", "Likely", "Certain", "Almost" };
         _xlegends = new string[5] { "Insignificant", "Minor", "Moderate", "Major", "Extreme" };
-        _values = new string[5, 5] { { "1.3", "2.1", "4.3", "3.3", "5.3" }, 
-                                     { "1.8", "2.3", "4.3", "3.3", "5.8"}, 
-                                     { "1.3", "2.2", "1.1", "8.3", "6.7"}, 
-                                     { "1.2", "2.3", "2.9", "3.3", "7.3"}, 
-                                     { "1.1", "2.5", "6.3", "8.3", "6.3"} };
-        _ruleRanges = new double[5] { 1.0, 3.0, 5.0, 7.0, 9.0 };
-        _ruleRangesX = new double[5] { rangeX1, rangeX2, rangeX3, rangeX4, rangeX5 };
-        _ruleRangesY = new double[5] { rangeY1, rangeY2, rangeY3, rangeY4, rangeY5 };
+        _values = new string[5, 5] { { "5.2", "5.2", "7.2", "7.2", "7.2" }, 
+                                     { "3.2", "5.2", "5.2", "7.2", "7.2"}, 
+                                     { "3.2", "3.2", "5.2", "5.2", "7.2"}, 
+                                     { "1.2", "3.2", "3.2", "5.2", "5.2"}, 
+                                     { "1.2", "1.2", "3.2", "3.2", "5.2"} };
+        _ruleRanges = new double[5] { 1.0, 3.0, 5.0, 7.0, 9.0 };        
         _ruleResult = new int[4] { 1, 2, 3, 4 };
+
+        _datavalues = new string[_ruleRangesX.Length, _ruleRangesY.Length];
         
     }
     
@@ -83,7 +123,7 @@
         {
             str.Append("<tr><th align='right'>"+ ylegend[i] +"</th></tr>");
         }
-
+        
         return str.ToString();
     }
 
@@ -98,17 +138,30 @@
         
         return str.ToString();
     }
+
+    protected String InitDataMatrixValue()
+    {
+        StringBuilder str = new StringBuilder();
+        List<object[]> data = BioPM.ClassObjects.RiskCatalog.GetTop5Risk();
+
+        for (int i = 0; i < data.Count; i++)
+        {
+            _datavalues[GetRuleResult(_ruleRangesX, _ruleResultX, data[i][1].ToString()), GetRuleResult(_ruleRangesY, _ruleResultY, data[i][1].ToString())] += " (" + data[i][0].ToString() + ")";
+        }
+        return str.ToString();
+    }
     
     protected String CreateRatingValue(string[,] value)
     {
         StringBuilder str = new StringBuilder();
+        InitDataMatrixValue();
         
         for (int i = 0; i < value.GetLength(0); i++)
         {
             str.Append("<tr>");
             for (int j = 0; j < value.GetLength(1); j++)
             {
-                str.Append("<td style='background-color:" + NumToEnum<Color>(GetRuleResult(_ruleRanges, _ruleResult, value[i,j])).ToString() +"'></td>");
+                str.Append("<td style='background-color:" + NumToEnum<Color>(GetRuleResult(_ruleRanges, _ruleResult, value[i, j])).ToString() + "'>" + (_datavalues[i, j] == null ? "" : _datavalues[i, j].ToString()) + "</td>");
             }
             str.Append("</tr>");
         }

@@ -33,5 +33,20 @@ namespace BioPM
         {
 
         }
+
+        protected void ddlFrequency_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnProbability_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlImpactBase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,7 +60,7 @@
 <head>
 <% Response.Write(BioPM.ClassScripts.BasicScripts.GetMetaScript()); %>
 
-    <title>RIKSK</title>
+    <title>RISK</title>
     
 <% Response.Write(BioPM.ClassScripts.StyleScripts.GetCoreStyle()); %>
 <% Response.Write(BioPM.ClassScripts.StyleScripts.GetTableStyle()); %>
